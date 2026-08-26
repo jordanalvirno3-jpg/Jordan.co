@@ -1,22 +1,20 @@
-// api/create-checkout.js - Secure Yoco Checkout (Vercel)
+// api/create-checkout.js - Secure Yoco Checkout - FIXED
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
   try {
-    const { total, customer, items } = req.body;
+    // Accept any field name your frontend uses
+    const body = req.body || {};
+    const total = body.total || body.amount || body.grandTotal || body.cartTotal || body.totalAmount || body.Total;
+    const customer = body.customer || body.customerDetails || { email: body.email, name: body.name };
+    const items = body.items || body.cart || [];
 
     if (!total) {
-      return res.status(400).json({ error: 'Missing total' });
+      return res.status(400).json({ error: `Missing total. Got: ${JSON.stringify(Object.keys(body))}` });
     }
 
     const secret = process.env.YOCO_SECRET_KEY;
-    if (!secret) {
-      return res.status(500).json({ error: 'YOCO_SECRET_KEY not set in Vercel' });
-    }
-
-    // Yoco expects amount in cents
     const amountInCents = Math.round(Number(total) * 100);
 
     const yocoRes = await fetch('https://payments.yoco.com/api/checkouts', {
@@ -34,7 +32,6 @@ export default async function handler(req, res) {
         metadata: {
           customer_email: customer?.email || '',
           customer_name: customer?.name || '',
-          items: JSON.stringify(items || []).slice(0, 400)
         }
       })
     });
@@ -42,17 +39,13 @@ export default async function handler(req, res) {
     const data = await yocoRes.json();
 
     if (!yocoRes.ok) {
-      console.error('Yoco error:', data);
-      return res.status(400).json({ error: data.message || 'Yoco checkout failed', details: data });
+      return res.status(400).json({ error: data.message || 'Yoco failed', details: data });
     }
 
-    // Yoco returns redirectUrl
-    const redirectUrl = data.redirectUrl || data.redirect_url || data.url;
-    
-    return res.status(200).json({ redirectUrl, url: redirectUrl, id: data.id });
+    const redirectUrl = data.redirectUrl || data.redirect_url;
+    return res.status(200).json({ redirectUrl, url: redirectUrl });
 
   } catch (err) {
-    console.error(err);
     return res.status(500).json({ error: 'Server error', details: err.message });
   }
 }
