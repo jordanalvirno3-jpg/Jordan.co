@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>JORDAN | Time is The True Luxury</title>
+<meta name="description" content="JORDAN — formal men's watches. Time is precious. Shipping R70 in Johannesburg, enquire outside JHB.">
+<style>
+:root{--bg:#090a0a;--card:#131414;--text:#f5f3ef;--muted:#9a9e9b;--line:rgba(255,255,255,.08);--accent:#c9a96a;--accent2:#e8d4a0;--max:1240px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:.3s}header.scrolled{background:rgba(9,10,10,.92);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:auto;height:76px;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;letter-spacing:9px;font-weight:800}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:38px}.navlinks a{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#d0d2d0}
+.navactions{display:flex;gap:10px;align-items:center}
+.iconbtn{width:42px;height:42px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);border-radius:50%;display:grid;place-items:center;position:relative;color:#fff;font-size:16px}
+.cartcount{position:absolute;top:-4px;right:-4px;background:var(--accent);color:#111;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center;font-weight:800}
+.wishcount{background:#fff;color:#111}
+.menu{color:#fff !important;background:rgba(255,255,255,.08) !important;border:1px solid rgba(255,255,255,.18) !important;font-size:18px !important}
+.hero{height:100vh;height:100dvh;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:radial-gradient(circle at 50% 15%, rgba(201,169,106,.14) 0%, transparent 55%),radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0%, transparent 40%),linear-gradient(180deg, #0e0f0f 0%, #090a0a 100%)}
+.hero:before{content:"";position:absolute;width:1px;height:100%;left:50%;top:0;background:linear-gradient(to bottom, transparent, rgba(201,169,106,.18), transparent)}
+.hero-inner{max-width:760px;width:100%;text-align:center;position:relative;z-index:2;padding-top:76px}
+.time-mark{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px}
+.time-mark:before,.time-mark:after{content:"";width:36px;height:1px;background:var(--accent);opacity:.6}
+.hero h1{font-family:Georgia,serif;font-size:clamp(42px, 7.8vw, 84px);line-height:.88;font-weight:400;letter-spacing:-2.5px}
+.hero h1 .line2{display:block;color:var(--accent2);font-style:italic}
+.hero-copy{max-width:460px;margin:28px auto 0;color:var(--muted);font-size:clamp(14px, 2vw, 16.5px);line-height:1.8}
+.hero-buttons{margin-top:42px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:16px 32px;border:1px solid var(--line);background:transparent;color:white;letter-spacing:1.2px;text-transform:uppercase;font-size:11px}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+.hero-clock{margin-top:52px;display:flex;justify-content:center}.clock-line{width:280px;height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.12), transparent);position:relative}.clock-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.5}
+.scroll-hint span{font-size:9px;letter-spacing:4px;text-transform:uppercase}.scroll-hint .line{width:1px;height:32px;background:linear-gradient(to bottom, rgba(255,255,255,.5), transparent)}
+.section{padding:110px 28px}.section-inner{max-width:var(--max);margin:auto}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px}
+.section-title{font-family:Georgia,serif;font-size:48px;font-weight:400;letter-spacing:-1.5px;line-height:1}
+.section-description{color:var(--muted);max-width:460px;font-size:15px;line-height:1.7}
+.toolbar{display:flex;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{padding:12px 20px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#c8cac7;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;white-space:nowrap}
+.filter-btn.active,.filter-btn:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.sort{background:#131414;border:1px solid var(--line);color:white;padding:12px 18px;min-width:140px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product{background:var(--card);border:1px solid var(--line);transition:.4s}
+.product:hover{transform:translateY(-6px);border-color:rgba(201,169,106,.32)}
+.product-image{aspect-ratio:1/1.08;background:radial-gradient(circle at center, rgba(255,255,255,.05), transparent 40%), linear-gradient(145deg,#171818,#0c0d0d);display:grid;place-items:center;position:relative;overflow:hidden}
+.product-image.has-real-image{background:#0f1010}.product-image img{width:100%;height:100%;object-fit:cover;transition:.6s}.product:hover img{transform:scale(1.06)}
+.placeholder-watch{width:148px;height:268px;border-radius:80px;background:linear-gradient(90deg,#0d0d0d,#6e6e6e,#151515);position:relative}
+.placeholder-watch:before{content:"";width:158px;height:158px;position:absolute;left:-5px;top:55px;border-radius:50%;background:radial-gradient(circle,#202020 0 62%,#aaa 63% 66%,#111 67% 100%)}
+.placeholder-watch:after{content:"J";position:absolute;top:102px;left:0;width:148px;text-align:center;font-family:Georgia,serif;font-size:32px;color:#ddd}
+.product-badge{position:absolute;top:16px;left:16px;padding:7px 10px;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:rgba(0,0,0,.6);border:1px solid var(--line);z-index:3}
+.wishlist{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);color:white;z-index:3}.wishlist.active{color:#111;background:var(--accent2);border-color:var(--accent2)}
+.product-info{padding:24px}.product-name{font-family:Georgia,serif;font-size:22px}.product-sub{color:var(--muted);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin:5px 0 18px}
+.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{color:var(--accent2);font-weight:700}.add{border:1px solid var(--accent);background:transparent;color:var(--accent2);padding:10px 14px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.story{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c0d0d}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.story-visual{min-height:640px;background:radial-gradient(circle at 50% 50%, rgba(201,169,106,.12), transparent 60%), linear-gradient(180deg,#121313,#090a0a);display:grid;place-items:center;text-align:center;padding:40px}
+.story-visual h3{font-family:Georgia,serif;font-size:52px;font-weight:400;line-height:1.05;max-width:400px}
+.story-content{padding:90px;display:flex;flex-direction:column;justify-content:center}
+.story-content h2{font-family:Georgia,serif;font-size:50px;font-weight:400;line-height:1.02;margin-bottom:24px}
+.story-content p{color:var(--muted);max-width:480px;margin-bottom:18px;font-size:15.5px;line-height:1.75}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.benefit{padding:48px;border-right:1px solid var(--line)}.benefit:last-child{border-right:0}
+.benefit-number{color:var(--accent);font-size:11px;letter-spacing:3px;margin-bottom:18px}.benefit h3{font-family:Georgia,serif;font-size:24px;margin-bottom:10px}.benefit p{color:var(--muted);font-size:13px;line-height:1.6}
+.quote-strip{padding:100px 28px;text-align:center;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 0%, rgba(201,169,106,.08), transparent 60%)}
+.quote-strip blockquote{font-family:Georgia,serif;font-size:clamp(28px, 4vw, 44px);line-height:1.15;max-width:760px;margin:auto}
+.quote-strip cite{display:block;margin-top:20px;color:var(--accent);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-style:normal}
+.newsletter{text-align:center;padding:110px 28px}.newsletter h2{font-family:Georgia,serif;font-size:46px;font-weight:400}.newsletter p{color:var(--muted);margin:16px auto 32px;max-width:500px}
+.newsletter-form{display:flex;max-width:520px;margin:auto}.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--line);color:white;padding:16px}.newsletter-form button{border:0;padding:16px 28px;background:var(--accent);font-weight:700}
+footer{border-top:1px solid var(--line);padding:48px 28px;background:#080909}.footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:20px}.footer-logo{letter-spacing:7px;font-weight:800}.footer-copy{color:var(--muted);font-size:12px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
+.cart{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
+.cart-head{padding:26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400}.close{background:none;border:0;color:white;font-size:26px}
+.cart-items{flex:1;overflow:auto;padding:22px}.empty{text-align:center;color:var(--muted);padding:80px 20px}
+.cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}.cart-thumb{width:72px;height:72px;background:#181a1a;display:grid;place-items:center}
+.cart-name{font-family:Georgia,serif}.cart-price{color:var(--accent2);font-size:13px;margin-top:4px}
+.qty{display:flex;align-items:center;gap:8px;margin-top:10px}.qty button{width:26px;height:26px;background:transparent;border:1px solid var(--line);color:white}.remove{background:none;border:0;color:#777;font-size:11px;margin-top:8px}
+.cart-total{padding:22px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;font-size:18px;margin-bottom:16px}.checkout{width:100%;padding:17px;border:0;background:var(--accent);font-weight:800}
+.wishlist-panel{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2150;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.wishlist-panel.open{transform:translateX(0)}
+.modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.85);display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}
+.modal-box{width:min(920px,100%);max-height:90vh;overflow:auto;background:#111212;border:1px solid var(--line);position:relative}.modal-close{position:absolute;top:16px;right:16px;z-index:5;width:40px;height:40px;border-radius:50%;background:#111;border:1px solid var(--line);color:white}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-image{min-height:520px;background:#0b0c0c;display:grid;place-items:center}.modal-image img{width:100%;height:100%;object-fit:cover}
+.modal-content{padding:56px 42px}.modal-content h2{font-family:Georgia,serif;font-size:42px;font-weight:400}.modal-content p{color:var(--muted);margin:20px 0}.modal-price{font-size:26px;color:var(--accent2);margin-bottom:28px}
+.checkout-page{position:fixed;inset:0;z-index:4000;background:var(--bg);overflow:auto;display:none}.checkout-page.open{display:block}.checkout-inner{max-width:1020px;margin:auto;padding:38px 28px 80px}.checkout-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:52px}
+.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}.checkout-box{border:1px solid var(--line);background:var(--card);padding:32px}.checkout-box h2{font-family:Georgia,serif;font-weight:400;margin-bottom:26px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}.field.full{grid-column:1/-1}.field label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.2px}
+.field input,.field select{background:#0b0c0c;border:1px solid var(--line);color:white;padding:14px}.summary-line{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}.summary-total{display:flex;justify-content:space-between;font-size:20px;padding-top:22px;color:var(--accent2)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#ecebe6;color:#111;padding:14px 22px;font-size:13px;z-index:5000;opacity:0;pointer-events:none;transition:.3s;border-radius:100px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.navlinks{display:none}.menu{display:grid}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:380px}.story-content{padding:60px 22px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{height:68px;padding:0 18px}.hero{padding:0 18px}.hero-inner{padding-top:68px}.hero h1{font-size:clamp(36px, 11vw, 54px)}.hero-copy{font-size:14px}.hero-buttons .btn{width:100%}.section{padding:80px 18px}.section-head{display:block}.section-title{font-size:34px;margin-bottom:12px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.filter-bar{padding-bottom:6px}.sort{width:100%}.newsletter h2{font-size:32px}.newsletter-form{display:block}.newsletter-form input,.newsletter-form button{width:100%}.modal-grid{grid-template-columns:1fr}.modal-image{min-height:300px}.modal-content{padding:32px 22px}.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header id="header"><nav class="nav"><a href="#" class="logo">J<span>O</span>RDAN</a><div class="navlinks"><a href="#collection">Collection</a><a href="#story">Philosophy</a><a href="#contact">Contact</a></div><div class="navactions">
+<button class="iconbtn" onclick="openWishlist()" aria-label="Wishlist">♡<span class="cartcount wishcount" id="wishCount">0</span></button>
+<button class="iconbtn" onclick="openCart()" aria-label="Cart">🛒<span class="cartcount" id="cartCount">0</span></button>
+<button class="iconbtn menu" onclick="toggleMobileMenu()"><span>☰</span></button>
+</div></nav></header>
+
+<section class="hero"><div class="hero-inner"><div class="time-mark">Time • Precious • Patient</div><h1><span class="line1">Time is</span><span class="line2">the true luxury.</span></h1><p class="hero-copy">With time, comes good things. <strong>JORDAN</strong> is built on that belief — formal, elegant watches made to be worn slowly, confidently, and for a long time.</p><div class="hero-buttons"><a href="#collection" class="btn primary">Explore Collection</a><a href="#story" class="btn">Why Time Matters</a></div><div class="hero-clock"><div class="clock-line"><div class="clock-dot"></div></div></div></div><div class="scroll-hint"><span>Scroll</span><div class="line"></div></div></section>
+
+<section class="section" id="collection"><div class="section-inner"><div class="section-head"><div><div class="time-mark" style="justify-content:flex-start">The Collection</div><h2 class="section-title">Designed to be kept.</h2></div><p class="section-description">A focused edit of formal watches. Stainless steel, mesh and leather. Balanced dials, comfortable fit, gift boxed. Made for everyday ceremony.</p></div>
+<div class="toolbar"><div class="filter-bar" id="filterBar">
+<button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Pieces</button>
+<button class="filter-btn" data-filter="mesh" onclick="setFilter('mesh')">Mesh</button>
+<button class="filter-btn" data-filter="leather" onclick="setFilter('leather')">Leather</button>
+<button class="filter-btn" data-filter="steel" onclick="setFilter('steel')">Steel</button>
+<button class="filter-btn" data-filter="black" onclick="setFilter('black')">Black</button>
+</div><select id="sort" class="sort" onchange="renderProducts()"><option value="default">Featured</option><option value="name">Name A-Z</option><option value="price">Price</option></select></div>
+<div class="products" id="products"></div></div></section>
+
+<section class="story" id="story"><div class="story-grid"><div class="story-visual"><div><h3>Time does not rush. It reveals.</h3><p>The best things arrive slowly — confidence, style, and good decisions. A watch should remind you of that.</p></div></div><div class="story-content"><div class="time-mark" style="justify-content:flex-start">Philosophy</div><h2>Time is precious. With time, comes good things.</h2><p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p><p>Each piece is chosen for proportion, finish and comfort. Not to shout, but to stay.</p><a href="#collection" class="btn" style="width:max-content;margin-top:14px">View The Edit</a></div></div></section>
+
+<section class="section"><div class="section-inner"><div class="benefits">
+<div class="benefit"><div class="benefit-number">01 — PATIENCE</div><h3>Built to Last Beyond Trends</h3><p>Formal profiles that don't expire next season. Stainless steel, scratch-resistant glass, adjustable fit.</p></div>
+<div class="benefit"><div class="benefit-number">02 — PRESENCE</div><h3>Elegant, Not Loud</h3><p>Clean dials, quiet branding. Confidence without noise. Made for those who understand that elegance is restraint.</p></div>
+<div class="benefit"><div class="benefit-number">03 — PROMISE</div><h3>Boxed, Ready, Local</h3><p>Every watch arrives gift boxed, ready for gifting. Shipping is R70 in Johannesburg. For deliveries outside Johannesburg, please enquire — we'll confirm the best option for you.</p></div>
+</div></div></section>
+
+<section class="quote-strip"><blockquote>"Time is the most valuable thing we have. We should wear it well."</blockquote><cite>— JORDAN, Johannesburg</cite></section>
+
+<section class="newsletter" id="contact"><div class="time-mark" style="justify-content:center">Stay in time</div><h2>First to know, never rushed.</h2><p>New pieces arrive slowly. Join the list for early access.</p><form class="newsletter-form" onsubmit="subscribe(event)"><input type="email" id="email" placeholder="Your email" required><button type="submit">Join</button></form></section>
+
+<footer><div class="footer-inner"><div><div class="footer-logo">JORDAN</div><div class="footer-copy">Time is precious • Formal • JHB • Box included</div></div><div class="footer-copy">© <span id="year"></span> Jordan — Time, Refined.</div></div></footer>
+
+<div class="overlay" id="overlay" onclick="closeAllDrawers()"></div>
+<aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></div></aside>
+<aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Your Wishlist</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button></div></aside>
+<div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProduct()">×</button><div class="modal-grid"><div class="modal-image" id="modalImage"></div><div class="modal-content"><div class="time-mark" style="justify-content:flex-start">Time, Refined</div><h2 id="modalName">Watch</h2><p id="modalDescription"></p><div class="modal-price" id="modalPrice"></div><button class="btn primary" id="modalAdd">Add to Selection</button></div></div></div></div>
+<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout">Place Order</button></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div></div></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const products = [
+    { 
+      id: 1, 
+      name: "AJ-01 Turntable", 
+      subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", 
+      price: 300, 
+      stock: 12, 
+      image: "images/aj-01.jpg", 
+      tags:["mesh","black","steel"], 
+      description: "The signature. Features the spinning turntable dial with concentric disc that rotates — inspired by vinyl. Silver case with black mesh bracelet that breathes. The dial has a textured black centre with silver outer ring. For those who appreciate movement and detail up close." 
+    },
+    { 
+      id: 2, 
+      name: "AJ-02 Black Beast", 
+      subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", 
+      price: 250, 
+      stock: 15, 
+      image: "images/aj-02.jpg", 
+      tags:["steel","black"], 
+      description: "All-black presence. Honeycomb textured dial with three chrono-style subdials (decorative) and date window. Full black stainless steel case and bracelet. Heavy, bold, reads as a chronograph but keeps formal elegance. Your everyday statement." 
+    },
+    { 
+      id: 3, 
+      name: "AJ-03 Midnight Steel", 
+      subtitle: "Matte Black • Minimal Chrono • Black Steel", 
+      price: 250, 
+      stock: 14, 
+      image: "images/aj-03.jpg", 
+      tags:["steel","black"], 
+      description: "Clean business profile. Matte black dial with slim silver markers, three subdials and steel hands. Black stainless case and link bracelet. No gold, no extra colour — just black and steel. The one you wear to work every day." 
+    },
+    { 
+      id: 4, 
+      name: "AJ-04 Gold Boss", 
+      subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", 
+      price: 250, 
+      stock: 10, 
+      image: "images/aj-04.jpg", 
+      tags:["steel","black"], 
+      description: "Two-tone boss. Black dial with gold Roman-style markers, gold crown and gold two-tone bracelet (black centre links, gold outer). The dial has a sunburst finish. Made for evening wear and gifting — the reward piece." 
+    },
+    { 
+      id: 5, 
+      name: "AJ-05 Geneva Brown", 
+      subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", 
+      price: 250, 
+      stock: 12, 
+      image: "images/aj-05.jpg", 
+      tags:["leather"], 
+      description: "Classic Geneva with warm brown genuine leather strap, gold case and soft champagne dial with Roman numerals. Slim profile, minimal date window. Looks right with brown shoes and a brown belt. Timeless, not trendy." 
+    },
+    { 
+      id: 6, 
+      name: "AJ-06 Geneva Silver Leather", 
+      subtitle: "Black Leather • Silver Dial • Two-Tone Markers", 
+      price: 250, 
+      stock: 11, 
+      image: "images/aj-06.jpg", 
+      tags:["leather","black"], 
+      description: "Quiet luxury. Black leather strap with silver case, light silver dial with black Roman numerals and blue hands. The most formal and minimal in the collection. For those who prefer whisper over shout." 
+    },
+    { 
+      id: 7, 
+      name: "AJ-07 Geneva Roman Black", 
+      subtitle: "Black Steel • Black Dial • Full Roman Numerals", 
+      price: 250, 
+      stock: 13, 
+      image: "images/aj-07.jpg", 
+      tags:["steel","black"], 
+      description: "All black steel with full Roman numeral dial in white on black background. Black case, black link bracelet, crown with blue stone detail. Sharp contrast, high legibility, modern formal. Your black-on-black daily." 
+    }
+];
+let currentFilter="all";
+let cart=JSON.parse(localStorage.getItem("jordanCart"))||[];
+let wishlist=JSON.parse(localStorage.getItem("jordanWishlist"))||[];
+function money(v){return new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR",maximumFractionDigits:0}).format(v);}
+function productVisual(p){return p.image?`<img src="${p.image}" alt="${p.name} - ${p.subtitle}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`:`<div class="placeholder-watch"></div>`;}
+function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));renderProducts();}
+function renderProducts(){
+    const c=document.getElementById("products"),sort=document.getElementById("sort").value;
+    let list=[...products];
+    if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));
+    if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));
+    if(sort==="price") list.sort((a,b)=>a.price-b.price);
+    c.innerHTML=list.map(p=>`<article class="product"><div class="product-image ${p.image?'has-real-image':''}" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");
+}
+function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
+function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="${p.image}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
+function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
+function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
+function toggleWishlist(id){if(wishlist.includes(id)){wishlist=wishlist.filter(x=>x!==id);showToast("Removed from wishlist");}else{wishlist.push(id);showToast("Added to wishlist — view in ♡");}localStorage.setItem("jordanWishlist",JSON.stringify(wishlist));updateWishlist();renderProducts();}
+function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty. Tap ♡ on any piece to save it.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);return `<div class="cart-item"><div class="cart-thumb"><img src="${p.image}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div style="font-size:11px;color:var(--muted);margin-top:4px">${p.subtitle}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add to Selection</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
+function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
+function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
+function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=p.image?`<img src="${p.image}" alt="${p.name}" onerror="this.outerHTML='<div class=placeholder-watch></div>'">`:`<div class="placeholder-watch"></div>`;document.getElementById("modalAdd").onclick=()=>addToCart(p.id);document.getElementById("productModal").classList.add("open");}
+function closeProduct(){document.getElementById("productModal").classList.remove("open");}
+function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
+function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
+function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");document.getElementById("checkoutTotal").textContent=money(getCartTotal());}
+async function processOrder(e){e.preventDefault();showToast("Order received — confirmation on WhatsApp.");}
+function subscribe(e){e.preventDefault();showToast("On the list.");e.target.reset();}
+function showToast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000);}
+function toggleMobileMenu(){const l=document.querySelector(".navlinks");if(l.style.display==="flex")l.style.display="";else{l.style.display="flex";l.style.position="absolute";l.style.top="76px";l.style.left="0";l.style.width="100%";l.style.padding="26px";l.style.background="#101111";l.style.flexDirection="column";l.style.borderTop="1px solid var(--line)";}}
+window.addEventListener("scroll",()=>{document.getElementById("header").classList.toggle("scrolled",window.scrollY>30);});
+document.getElementById("year").textContent=new Date().getFullYear();renderProducts();updateCart();updateWishlist();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeAllDrawers();closeProduct();closeCheckout();}});
+</script>
+</body>
+</html>
