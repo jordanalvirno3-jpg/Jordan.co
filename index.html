@@ -133,76 +133,13 @@ footer{border-top:1px solid var(--line);padding:48px 28px;background:#080909}.fo
 
 <script>
 const products = [
-    { 
-      id: 1, 
-      name: "AJ-01 Turntable", 
-      subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", 
-      price: 300, 
-      stock: 12, 
-      image: "images/aj-01.jpg", 
-      tags:["mesh","black","steel"], 
-      description: "The signature. Features the spinning turntable dial with concentric disc that rotates — inspired by vinyl. Silver case with black mesh bracelet that breathes. The dial has a textured black centre with silver outer ring. For those who appreciate movement and detail up close." 
-    },
-    { 
-      id: 2, 
-      name: "AJ-02 Black Beast", 
-      subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", 
-      price: 250, 
-      stock: 15, 
-      image: "images/aj-02.jpg", 
-      tags:["steel","black"], 
-      description: "All-black presence. Honeycomb textured dial with three chrono-style subdials (decorative) and date window. Full black stainless steel case and bracelet. Heavy, bold, reads as a chronograph but keeps formal elegance. Your everyday statement." 
-    },
-    { 
-      id: 3, 
-      name: "AJ-03 Midnight Steel", 
-      subtitle: "Matte Black • Minimal Chrono • Black Steel", 
-      price: 250, 
-      stock: 14, 
-      image: "images/aj-03.jpg", 
-      tags:["steel","black"], 
-      description: "Clean business profile. Matte black dial with slim silver markers, three subdials and steel hands. Black stainless case and link bracelet. No gold, no extra colour — just black and steel. The one you wear to work every day." 
-    },
-    { 
-      id: 4, 
-      name: "AJ-04 Gold Boss", 
-      subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", 
-      price: 250, 
-      stock: 10, 
-      image: "images/aj-04.jpg", 
-      tags:["steel","black"], 
-      description: "Two-tone boss. Black dial with gold Roman-style markers, gold crown and gold two-tone bracelet (black centre links, gold outer). The dial has a sunburst finish. Made for evening wear and gifting — the reward piece." 
-    },
-    { 
-      id: 5, 
-      name: "AJ-05 Geneva Brown", 
-      subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", 
-      price: 250, 
-      stock: 12, 
-      image: "images/aj-05.jpg", 
-      tags:["leather"], 
-      description: "Classic Geneva with warm brown genuine leather strap, gold case and soft champagne dial with Roman numerals. Slim profile, minimal date window. Looks right with brown shoes and a brown belt. Timeless, not trendy." 
-    },
-    { 
-      id: 6, 
-      name: "AJ-06 Geneva Silver Leather", 
-      subtitle: "Black Leather • Silver Dial • Two-Tone Markers", 
-      price: 250, 
-      stock: 11, 
-      image: "images/aj-06.jpg", 
-      tags:["leather","black"], 
-      description: "Quiet luxury. Black leather strap with silver case, light silver dial with black Roman numerals and blue hands. The most formal and minimal in the collection. For those who prefer whisper over shout." 
-    },
-    { 
-      id: 7, 
-      name: "AJ-07 Geneva Roman Black", 
-      subtitle: "Black Steel • Black Dial • Full Roman Numerals", 
-      price: 250, 
-      stock: 13, 
-      image: "images/aj-07.jpg", 
-      tags:["steel","black"], 
-      description: "All black steel with full Roman numeral dial in white on black background. Black case, black link bracelet, crown with blue stone detail. Sharp contrast, high legibility, modern formal. Your black-on-black daily." 
-    }
+    { id: 1, name: "AJ-01 Turntable", subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", price: 300, stock: 12, image: "aj-01.jpg", tags:["mesh","black","steel"], description: "The signature. Features the spinning turntable dial with concentric disc that rotates — inspired by vinyl. Silver case with black mesh bracelet that breathes. The dial has a textured black centre with silver outer ring. For those who appreciate movement and detail up close." },
+    { id: 2, name: "AJ-02 Black Beast", subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", price: 250, stock: 15, image: "aj-02.jpg", tags:["steel","black"], description: "All-black presence. Honeycomb textured dial with three chrono-style subdials (decorative) and date window. Full black stainless steel case and bracelet. Heavy, bold, reads as a chronograph but keeps formal elegance. Your everyday statement." },
+    { id: 3, name: "AJ-03 Midnight Steel", subtitle: "Matte Black • Minimal Chrono • Black Steel", price: 250, stock: 14, image: "aj-03.jpg", tags:["steel","black"], description: "Clean business profile. Matte black dial with slim silver markers, three subdials and steel hands. Black stainless case and link bracelet. No gold, no extra colour — just black and steel. The one you wear to work every day." },
+    { id: 4, name: "AJ-04 Gold Boss", subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", price: 250, stock: 10, image: "aj-04.jpg", tags:["steel","black"], description: "Two-tone boss. Black dial with gold Roman-style markers, gold crown and gold two-tone bracelet (black centre links, gold outer). The dial has a sunburst finish. Made for evening wear and gifting — the reward piece." },
+    { id: 5, name: "AJ-05 Geneva Brown", subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", price: 250, stock: 12, image: "aj-05.jpg", tags:["leather"], description: "Classic Geneva with warm brown genuine leather strap, gold case and soft champagne dial with Roman numerals. Slim profile, minimal date window. Looks right with brown shoes and a brown belt. Timeless, not trendy." },
+    { id: 6, name: "AJ-06 Geneva Silver Leather", subtitle: "Black Leather • Silver Dial • Two-Tone Markers", price: 250, stock: 11, image: "aj-06.jpg", tags:["leather","black"], description: "Quiet luxury. Black leather strap with silver case, light silver dial with black Roman numerals and blue hands. The most formal and minimal in the collection. For those who prefer whisper over shout." },
+    { id: 7, name: "AJ-07 Geneva Roman Black", subtitle: "Black Steel • Black Dial • Full Roman Numerals", price: 250, stock: 13, image: "aj-07.jpg", tags:["steel","black"], description: "All black steel with full Roman numeral dial in white on black background. Black case, black link bracelet, crown with blue stone detail. Sharp contrast, high legibility, modern formal. Your black-on-black daily." }
 ];
 let currentFilter="all";
 let cart=JSON.parse(localStorage.getItem("jordanCart"))||[];
