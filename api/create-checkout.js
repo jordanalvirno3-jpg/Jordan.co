@@ -1,21 +1,23 @@
-// api/create-checkout.js - Secure Yoco Checkout - FIXED
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
   try {
-    // Accept any field name your frontend uses
     const body = req.body || {};
-    const total = body.total || body.amount || body.grandTotal || body.cartTotal || body.totalAmount || body.Total;
-    const customer = body.customer || body.customerDetails || { email: body.email, name: body.name };
+    const total = body.total || body.amount || body.grandTotal || body.cartTotal || body.totalAmount;
+    const customer = body.customer || {};
     const items = body.items || body.cart || [];
 
     if (!total) {
-      return res.status(400).json({ error: `Missing total. Got: ${JSON.stringify(Object.keys(body))}` });
+      return res.status(400).json({ error: 'Missing total' });
     }
 
     const secret = process.env.YOCO_SECRET_KEY;
-    const amountInCents = Math.round(Number(total) * 100);
+    const numTotal = Number(total);
+    
+    // FIX FOR R32 000 BUG: if already in cents (32000) use it, if in rands (320) convert
+    const amountInCents = numTotal > 1000 ? Math.round(numTotal) : Math.round(numTotal * 100);
 
     const yocoRes = await fetch('https://payments.yoco.com/api/checkouts', {
       method: 'POST',
@@ -30,8 +32,8 @@ export default async function handler(req, res) {
         cancelUrl: 'https://jordan-co.vercel.app/#collection',
         failureUrl: 'https://jordan-co.vercel.app/#collection',
         metadata: {
-          customer_email: customer?.email || '',
-          customer_name: customer?.name || '',
+          email: customer.email || '',
+          name: customer.name || ''
         }
       })
     });
@@ -39,13 +41,15 @@ export default async function handler(req, res) {
     const data = await yocoRes.json();
 
     if (!yocoRes.ok) {
-      return res.status(400).json({ error: data.message || 'Yoco failed', details: data });
+      return res.status(400).json({ error: data.message || 'Yoco error', details: data });
     }
 
-    const redirectUrl = data.redirectUrl || data.redirect_url;
-    return res.status(200).json({ redirectUrl, url: redirectUrl });
+    return res.status(200).json({ 
+      redirectUrl: data.redirectUrl || data.redirect_url,
+      url: data.redirectUrl || data.redirect_url
+    });
 
   } catch (err) {
-    return res.status(500).json({ error: 'Server error', details: err.message });
+    return res.status(500).json({ error: err.message });
   }
 }
