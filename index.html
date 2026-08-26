@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>JORDAN | Time is The True Luxury</title>
-<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
 <style>
 :root{--bg:#090a0a;--card:#131414;--text:#f5f3ef;--muted:#9a9e9b;--line:rgba(255,255,255,.08);--accent:#c9a96a;--accent2:#e8d4a0;--max:1240px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
@@ -68,8 +67,6 @@ header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:.3s}header
 .quote-strip cite{display:block;margin-top:20px;color:var(--accent);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-style:normal}
 .newsletter{text-align:center;padding:110px 28px}.newsletter h2{font-family:Georgia,serif;font-size:46px;font-weight:400}.newsletter p{color:var(--muted);margin:16px auto 32px;max-width:500px}
 .newsletter-form{display:flex;max-width:520px;margin:auto}.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--line);color:white;padding:16px}.newsletter-form button{border:0;padding:16px 28px;background:var(--accent);font-weight:700}
-
-/* --- NICER FOOTER --- */
 footer{border-top:1px solid var(--line);background:#060707;padding:0}
 .footer-top{max-width:var(--max);margin:auto;padding:44px 28px 28px;display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px}
 .footer-brand .footer-logo{letter-spacing:8px;font-weight:800;font-size:13px;}
@@ -81,7 +78,6 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 .footer-bottom{max-width:var(--max);margin:auto;padding:16px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer-bottom p{font-size:9px;color:#4e5250;letter-spacing:.4px}
 @media(max-width:800px){.footer-top{grid-template-columns:1fr 1fr}.footer-pay{justify-content:flex-start}}
-
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
 .cart{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
 .cart-head{padding:26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400}.close{background:none;border:0;color:white;font-size:26px}
@@ -150,14 +146,12 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 <p>Mon - Sat 9am - 6pm</p>
 </div>
 </div>
-
 <div class="footer-pay">
 <span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">Amex</span><span class="pay-pill">Diners</span>
 <span class="pay-pill">Apple Pay</span><span class="pay-pill">Google Pay</span><span class="pay-pill">Samsung Pay</span>
 <span class="pay-pill">Capitec Pay</span><span class="pay-pill">Ozow EFT</span><span class="pay-pill">FNB</span><span class="pay-pill">Absa</span><span class="pay-pill">Standard Bank</span><span class="pay-pill">Nedbank</span><span class="pay-pill">TymeBank</span><span class="pay-pill">Discovery</span><span class="pay-pill">African Bank</span>
 <span class="pay-pill">EFT</span><span class="pay-pill">Scan to Pay</span><span class="pay-pill">Zapper</span><span class="pay-pill">SnapScan</span><span class="pay-pill">PayShap</span><span class="pay-pill">3D Secure</span>
 </div>
-
 <div class="footer-bottom">
 <p>© <span id="year"></span> JORDAN — Time, Refined. All rights reserved.</p>
 <p>Yoco Secured • POPIA Compliant • SSL Encrypted</p>
@@ -171,28 +165,26 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 <div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco - Apple Pay / Card</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">Secure by Yoco • 0690151081</p></div></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
-if(localStorage.getItem("jordanCart") && JSON.parse(localStorage.getItem("jordanCart")).length>0){
-  const lastClear = localStorage.getItem("jordanLastClear");
-  if(!lastClear){ localStorage.removeItem("jordanCart"); localStorage.setItem("jordanLastClear","1"); }
-}
+// FORCE CLEAR OLD CART - FIX FOR YOUR SCREENSHOT
+localStorage.removeItem("jordanCart");
 const YOCO_PUBLIC_KEY='pk_live_a4d7fcf7V4kJbvV134c4';
 const OWNER_WA='27690151081';
 const products = [
-    { id: 1, name: "AJ-01 Turntable", subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", price: 300, stock: 12, image: "aj-01.jpg", tags:["mesh","black","steel"], description: "The signature. Features the spinning turntable dial with concentric disc that rotates — inspired by vinyl. Silver case with black mesh bracelet." },
-    { id: 2, name: "AJ-02 Black Beast", subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", price: 250, stock: 15, image: "aj-02.jpg", tags:["steel","black"], description: "All-black presence. Honeycomb textured dial with three chrono-style subdials." },
-    { id: 3, name: "AJ-03 Midnight Steel", subtitle: "Matte Black • Minimal Chrono • Black Steel", price: 250, stock: 14, image: "aj-03.jpg", tags:["steel","black"], description: "Clean business profile. Matte black dial with slim silver markers." },
-    { id: 4, name: "AJ-04 Gold Boss", subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", price: 250, stock: 10, image: "aj-04.jpg", tags:["steel","black"], description: "Two-tone boss. Black dial with gold markers." },
-    { id: 5, name: "AJ-05 Geneva Brown", subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", price: 250, stock: 12, image: "aj-05.jpg", tags:["leather"], description: "Classic Geneva with warm brown genuine leather strap." },
-    { id: 6, name: "AJ-06 Geneva Silver Leather", subtitle: "Black Leather • Silver Dial • Two-Tone Markers", price: 250, stock: 11, image: "aj-06.jpg", tags:["leather","black"], description: "Quiet luxury. Black leather strap with silver case." },
-    { id: 7, name: "AJ-07 Geneva Roman Black", subtitle: "Black Steel • Black Dial • Full Roman Numerals", price: 250, stock: 13, image: "aj-07.jpg", tags:["steel","black"], description: "All black steel with full Roman numeral dial." }
+    { id: 1, name: "AJ-01 Turntable", subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", price: 300, stock: 12, image: "aj-01.jpg", tags:["mesh","black","steel"], description: "The signature. Spinning turntable dial." },
+    { id: 2, name: "AJ-02 Black Beast", subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", price: 250, stock: 15, image: "aj-02.jpg", tags:["steel","black"], description: "All-black presence. Honeycomb dial." },
+    { id: 3, name: "AJ-03 Midnight Steel", subtitle: "Matte Black • Minimal Chrono • Black Steel", price: 250, stock: 14, image: "aj-03.jpg", tags:["steel","black"], description: "Clean business profile." },
+    { id: 4, name: "AJ-04 Gold Boss", subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", price: 250, stock: 10, image: "aj-04.jpg", tags:["steel","black"], description: "Two-tone boss." },
+    { id: 5, name: "AJ-05 Geneva Brown", subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", price: 250, stock: 12, image: "aj-05.jpg", tags:["leather"], description: "Classic Geneva brown leather." },
+    { id: 6, name: "AJ-06 Geneva Silver Leather", subtitle: "Black Leather • Silver Dial • Two-Tone Markers", price: 250, stock: 11, image: "aj-06.jpg", tags:["leather","black"], description: "Quiet luxury." },
+    { id: 7, name: "AJ-07 Geneva Roman Black", subtitle: "Black Steel • Black Dial • Full Roman Numerals", price: 250, stock: 13, image: "aj-07.jpg", tags:["steel","black"], description: "All black steel Roman." }
 ];
 let currentFilter="all";
-let cart=JSON.parse(localStorage.getItem("jordanCart"))||[];
+let cart=[];
 let wishlist=JSON.parse(localStorage.getItem("jordanWishlist"))||[];
 function money(v){return new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR",maximumFractionDigits:0}).format(v);}
-function productVisual(p){return p.image?`<img src="./${p.image}?v=3" alt="${p.name}" loading="lazy" onerror="this.src='${p.image}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='block';};"><div class="placeholder-watch" style="display:none"></div>`:`<div class="placeholder-watch"></div>`;}
+function productVisual(p){return `<img src="./${p.image}?v=4" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`;}
 function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));renderProducts();}
-function renderProducts(){const c=document.getElementById("products");const sort=document.getElementById("sort").value;let list=[...products];if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));if(sort==="price") list.sort((a,b)=>a.price-b.price);c.innerHTML=list.map(p=>`<article class="product"><div class="product-image ${p.image?'has-real-image':''}" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");}
+function renderProducts(){const c=document.getElementById("products");const sort=document.getElementById("sort").value;let list=[...products];if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));if(sort==="price") list.sort((a,b)=>a.price-b.price);c.innerHTML=list.map(p=>`<article class="product"><div class="product-image has-real-image" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");}
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
 function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
@@ -204,14 +196,25 @@ function updateWishlist(){document.getElementById("wishCount").textContent=wishl
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=p.image?`<img src="./${p.image}" alt="${p.name}">`:`<div class="placeholder-watch"></div>`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
 function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");const total=getCartTotal()+70; document.getElementById("checkoutTotal").textContent=money(total);}
-let yoco=null;
-try{ if(window.YocoSDK){ yoco=new window.YocoSDK({publicKey:YOCO_PUBLIC_KEY}); } }catch(e){}
-function processOrder(e){
+
+// FIXED YOCO LOADER - loads on demand
+function loadYocoSDK(){
+  return new Promise((resolve, reject)=>{
+    if(window.YocoSDK){ resolve(new window.YocoSDK({publicKey:YOCO_PUBLIC_KEY})); return; }
+    const script=document.createElement('script');
+    script.src='https://js.yoco.com/sdk/v1/yoco-sdk-web.js';
+    script.onload=()=>{ try{ resolve(new window.YocoSDK({publicKey:YOCO_PUBLIC_KEY})); } catch(e){ reject(e); } };
+    script.onerror=()=>reject('Failed to load Yoco');
+    document.head.appendChild(script);
+  });
+}
+
+async function processOrder(e){
   e.preventDefault();
   const firstName=document.getElementById('firstName').value.trim();
   const lastName=document.getElementById('lastName').value.trim();
@@ -223,24 +226,39 @@ function processOrder(e){
   if(!phone||!address){ showToast("Add phone & address"); return; }
   const sub=getCartTotal(); const ship=70; const total=sub+ship;
   const status=document.getElementById('payStatus');
-  if(!yoco){ status.innerText="Yoco loading... refresh"; return; }
-  status.innerText="Opening secure Yoco checkout...";
-  yoco.showPopup({
-    amountInCents: total*100,
-    currency: 'ZAR',
-    name: 'JORDAN',
-    description: cart.map(i=>products.find(x=>x.id===i.id).name).join(', '),
-    callback: function(result){
-      if(result.error){ status.innerText="Payment failed: "+result.error.message; }
-      else {
-        status.innerText="Paid! "+result.id;
-        const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join('%0A');
-        const msg=`*NEW PAID ORDER - JORDAN*%0A%0AName: ${firstName} ${lastName}%0APhone: ${phone}%0AEmail: ${email}%0AAddress: ${address}, ${city} ${postal}%0A%0AItems:%0A${items}%0A%0ASubtotal: ${money(sub)}%0AShipping: R${ship}%0ATOTAL PAID: ${money(total)}%0APayID: ${result.id}`;
-        cart=[]; saveCart();
-        window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`;
+  const btn=document.getElementById('payBtn');
+  btn.disabled=true;
+  status.innerText="Initializing Yoco Secure...";
+  try{
+    const yoco = await loadYocoSDK();
+    status.innerText="Opening Yoco — Apple Pay / Card...";
+    yoco.showPopup({
+      amountInCents: total*100,
+      currency: 'ZAR',
+      name: 'JORDAN',
+      description: cart.map(i=>products.find(x=>x.id===i.id).name).join(', '),
+      callback: function(result){
+        btn.disabled=false;
+        if(result.error){ status.innerText="Payment failed: "+result.error.message; }
+        else {
+          status.innerText="Paid! "+result.id+" → WhatsApp";
+          const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join('%0A');
+          const msg=`*NEW PAID ORDER - JORDAN*%0A%0AName: ${firstName} ${lastName}%0APhone: ${phone}%0AEmail: ${email}%0AAddress: ${address}, ${city} ${postal}%0A%0AItems:%0A${items}%0A%0ASubtotal: ${money(sub)}%0AShipping: R${ship}%0ATOTAL PAID: ${money(total)}%0APayID: ${result.id}`;
+          cart=[]; saveCart();
+          window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`;
+        }
       }
-    }
-  });
+    });
+  }catch(err){
+    btn.disabled=false;
+    status.innerText="Yoco offline — Order will send to WhatsApp 0690151081. Error: "+err;
+    // Fallback to WhatsApp order if Yoco fails
+    setTimeout(()=>{
+      const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join('%0A');
+      const msg=`*NEW ORDER (Pay on Delivery/EFT) - JORDAN*%0A%0AName: ${firstName} ${lastName}%0APhone: ${phone}%0AAddress: ${address}, ${city}%0A%0AItems:%0A${items}%0ATOTAL: ${money(total)}`;
+      window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`;
+    },1500);
+  }
 }
 function subscribe(e){e.preventDefault();showToast("On the list.");e.target.reset();}
 function showToast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000);}
