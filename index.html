@@ -17,7 +17,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:.3s}header
 .cartcount{position:absolute;top:-4px;right:-4px;background:var(--accent);color:#111;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center;font-weight:800}
 .wishcount{background:#fff;color:#111}
 .menu{color:#fff !important;background:rgba(255,255,255,.08) !important;border:1px solid rgba(255,255,255,.18) !important;font-size:18px !important}
-.hero{height:100vh;height:100dvh;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:radial-gradient(circle at 50% 15%, rgba(201,169,106,.14) 0%, transparent 55%),radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0%, transparent 40%),linear-gradient(180deg, #0e0f0f 0%, #090a0a 100%)}
+.hero{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:radial-gradient(circle at 50% 15%, rgba(201,169,106,.14) 0%, transparent 55%),radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0%, transparent 40%),linear-gradient(180deg, #0e0f0f 0%, #090a0a 100%)}
 .hero:before{content:"";position:absolute;width:1px;height:100%;left:50%;top:0;background:linear-gradient(to bottom, transparent, rgba(201,169,106,.18), transparent)}
 .hero-inner{max-width:760px;width:100%;text-align:center;position:relative;z-index:2;padding-top:76px}
 .time-mark{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px}
@@ -77,7 +77,6 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 .pay-pill{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:#8a8e8b;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:6px 10px;border-radius:100px}
 .footer-bottom{max-width:var(--max);margin:auto;padding:16px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer-bottom p{font-size:9px;color:#4e5250;letter-spacing:.4px}
-@media(max-width:800px){.footer-top{grid-template-columns:1fr 1fr}.footer-pay{justify-content:flex-start}}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
 .cart{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
 .cart-head{padding:26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400}.close{background:none;border:0;color:white;font-size:26px}
@@ -96,112 +95,48 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}.field.full{grid-column:1/-1}.field label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.2px}
 .field input,.field select{background:#0b0c0c;border:1px solid var(--line);color:white;padding:14px}.summary-line{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}.summary-total{display:flex;justify-content:space-between;font-size:20px;padding-top:22px;color:var(--accent2)}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#ecebe6;color:#111;padding:14px 22px;font-size:13px;z-index:5000;opacity:0;pointer-events:none;transition:.3s;border-radius:100px}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:900px){.navlinks{display:none}.menu{display:grid}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:380px}.story-content{padding:60px 22px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.nav{height:68px;padding:0 18px}.hero{padding:0 18px}.hero-inner{padding-top:68px}.hero h1{font-size:clamp(36px, 11vw, 54px)}.hero-copy{font-size:14px}.hero-buttons .btn{width:100%}.section{padding:80px 18px}.section-head{display:block}.section-title{font-size:34px;margin-bottom:12px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.filter-bar{padding-bottom:6px}.sort{width:100%}.newsletter h2{font-size:32px}.newsletter-form{display:block}.newsletter-form input,.newsletter-form button{width:100%}.modal-grid{grid-template-columns:1fr}.modal-image{min-height:300px}.modal-content{padding:32px 22px}.form-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.navlinks{display:none}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:380px}.story-content{padding:60px 22px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{height:68px;padding:0 18px}.hero{padding:0 18px}.hero-inner{padding-top:68px}.hero h1{font-size:clamp(36px, 11vw, 54px)}.section{padding:80px 18px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header id="header"><nav class="nav"><a href="#" class="logo">J<span>O</span>RDAN</a><div class="navlinks"><a href="#collection">Collection</a><a href="#story">Philosophy</a><a href="#contact">Contact</a></div><div class="navactions">
-<button class="iconbtn" onclick="openWishlist()" aria-label="Wishlist">♡<span class="cartcount wishcount" id="wishCount">0</span></button>
-<button class="iconbtn" onclick="openCart()" aria-label="Cart">🛒<span class="cartcount" id="cartCount">0</span></button>
-<button class="iconbtn menu" onclick="toggleMobileMenu()"><span>☰</span></button>
-</div></nav></header>
-<section class="hero"><div class="hero-inner"><div class="time-mark">Time • Precious • Patient</div><h1><span class="line1">Time is</span><span class="line2">the true luxury.</span></h1><p class="hero-copy">With time, comes good things. <strong>JORDAN</strong> is built on that belief — formal, elegant watches made to be worn slowly, confidently, and for a long time.</p><div class="hero-buttons"><a href="#collection" class="btn primary">Explore Collection</a><a href="#story" class="btn">Why Time Matters</a></div><div class="hero-clock"><div class="clock-line"><div class="clock-dot"></div></div></div></div><div class="scroll-hint"><span>Scroll</span><div class="line"></div></div></section>
-<section class="section" id="collection"><div class="section-inner"><div class="section-head"><div><div class="time-mark" style="justify-content:flex-start">The Collection</div><h2 class="section-title">Designed to be kept.</h2></div><p class="section-description">A focused edit of formal watches. Stainless steel, mesh and leather. Balanced dials, comfortable fit, gift boxed. Made for everyday ceremony.</p></div>
-<div class="toolbar"><div class="filter-bar" id="filterBar">
-<button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Pieces</button>
-<button class="filter-btn" data-filter="mesh" onclick="setFilter('mesh')">Mesh</button>
-<button class="filter-btn" data-filter="leather" onclick="setFilter('leather')">Leather</button>
-<button class="filter-btn" data-filter="steel" onclick="setFilter('steel')">Steel</button>
-<button class="filter-btn" data-filter="black" onclick="setFilter('black')">Black</button>
-</div><select id="sort" class="sort" onchange="renderProducts()"><option value="default">Featured</option><option value="name">Name A-Z</option><option value="price">Price</option></select></div>
-<div class="products" id="products"></div></div></section>
-<section class="story" id="story"><div class="story-grid"><div class="story-visual"><div><h3>Time does not rush. It reveals.</h3><p>The best things arrive slowly — confidence, style, and good decisions. A watch should remind you of that.</p></div></div><div class="story-content"><div class="time-mark" style="justify-content:flex-start">Philosophy</div><h2>Time is precious. With time, comes good things.</h2><p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p><p>Each piece is chosen for proportion, finish and comfort. Not to shout, but to stay.</p><a href="#collection" class="btn" style="width:max-content;margin-top:14px">View The Edit</a></div></div></section>
-<section class="section"><div class="section-inner"><div class="benefits">
-<div class="benefit"><div class="benefit-number">01 — PATIENCE</div><h3>Built to Last Beyond Trends</h3><p>Formal profiles that don't expire next season. Stainless steel, scratch-resistant glass, adjustable fit.</p></div>
-<div class="benefit"><div class="benefit-number">02 — PRESENCE</div><h3>Elegant, Not Loud</h3><p>Clean dials, quiet branding. Confidence without noise. Made for those who understand that elegance is restraint.</p></div>
-<div class="benefit"><div class="benefit-number">03 — PROMISE</div><h3>Boxed, Ready, Local</h3><p>Every watch arrives gift boxed, ready for gifting. Shipping is R70 in Johannesburg. For deliveries outside Johannesburg, please enquire — we'll confirm the best option for you.</p></div>
-</div></div></section>
+<header id="header"><nav class="nav"><a href="#" class="logo">J<span>O</span>RDAN</a><div class="navlinks"><a href="#collection">Collection</a><a href="#story">Philosophy</a><a href="#contact">Contact</a></div><div class="navactions"><button class="iconbtn" onclick="openWishlist()">♡<span class="cartcount wishcount" id="wishCount">0</span></button><button class="iconbtn" onclick="openCart()">🛒<span class="cartcount" id="cartCount">0</span></button><button class="iconbtn menu" onclick="toggleMobileMenu()">☰</button></div></nav></header>
+<section class="hero"><div class="hero-inner"><div class="time-mark">Time • Precious • Patient</div><h1><span>Time is</span><span class="line2">the true luxury.</span></h1><p class="hero-copy">With time, comes good things. <strong>JORDAN</strong> is built on that belief — formal, elegant watches made to be worn slowly, confidently, and for a long time.</p><div class="hero-buttons"><a href="#collection" class="btn primary">Explore Collection</a><a href="#story" class="btn">Why Time Matters</a></div><div class="hero-clock"><div class="clock-line"><div class="clock-dot"></div></div></div></div><div class="scroll-hint"><span>Scroll</span><div class="line"></div></div></section>
+<section class="section" id="collection"><div class="section-inner"><div class="section-head"><div><div class="time-mark" style="justify-content:flex-start">The Collection</div><h2 class="section-title">Designed to be kept.</h2></div><p class="section-description">A focused edit of formal watches. Stainless steel, mesh and leather. Balanced dials, comfortable fit, gift boxed. Made for everyday ceremony.</p></div><div class="toolbar"><div class="filter-bar"><button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Pieces</button><button class="filter-btn" data-filter="mesh" onclick="setFilter('mesh')">Mesh</button><button class="filter-btn" data-filter="leather" onclick="setFilter('leather')">Leather</button><button class="filter-btn" data-filter="steel" onclick="setFilter('steel')">Steel</button><button class="filter-btn" data-filter="black" onclick="setFilter('black')">Black</button></div><select id="sort" class="sort" onchange="renderProducts()"><option value="default">Featured</option><option value="name">Name A-Z</option><option value="price">Price</option></select></div><div class="products" id="products"></div></div></section>
+<section class="story" id="story"><div class="story-grid"><div class="story-visual"><div><h3>Time does not rush. It reveals.</h3></div></div><div class="story-content"><div class="time-mark" style="justify-content:flex-start">Philosophy</div><h2>Time is precious. With time, comes good things.</h2><p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p><p>Each piece is chosen for proportion, finish and comfort. Not to shout, but to stay.</p><a href="#collection" class="btn" style="width:max-content;margin-top:14px">View The Edit</a></div></div></section>
+<section class="section"><div class="section-inner"><div class="benefits"><div class="benefit"><div class="benefit-number">01 — PATIENCE</div><h3>Built to Last Beyond Trends</h3><p>Formal profiles that don't expire next season.</p></div><div class="benefit"><div class="benefit-number">02 — PRESENCE</div><h3>Elegant, Not Loud</h3><p>Clean dials, quiet branding. Confidence without noise.</p></div><div class="benefit"><div class="benefit-number">03 — PROMISE</div><h3>Boxed, Ready, Local</h3><p>Gift boxed, ready for gifting. Shipping is R70 in Johannesburg.</p></div></div></div></section>
 <section class="quote-strip"><blockquote>"Time is the most valuable thing we have. We should wear it well."</blockquote><cite>— JORDAN, Johannesburg</cite></section>
 <section class="newsletter" id="contact"><div class="time-mark" style="justify-content:center">Stay in time</div><h2>First to know, never rushed.</h2><p>New pieces arrive slowly. Join the list for early access.</p><form class="newsletter-form" onsubmit="subscribe(event)"><input type="email" id="email" placeholder="Your email" required><button type="submit">Join</button></form></section>
-<footer>
-<div class="footer-top">
-<div class="footer-brand">
-<div class="footer-logo">JORDAN</div>
-<div class="tagline">Time is precious. Formal watches, boxed in Johannesburg. With time, comes good things — designed to be kept, not replaced.</div>
-</div>
-<div class="footer-col">
-<h4>Shop</h4>
-<a href="#collection">All Collection</a>
-<a>Gift Box Included</a>
-<a>R70 Shipping JHB</a>
-<a>Outside JHB Enquire</a>
-</div>
-<div class="footer-col">
-<h4>Contact</h4>
-<p>WhatsApp: 0690151081</p>
-<p>Email: hello@jordan.co.za</p>
-<p>Johannesburg, South Africa</p>
-<p>Mon - Sat 9am - 6pm</p>
-</div>
-</div>
-<div class="footer-pay">
-<span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">Amex</span><span class="pay-pill">Diners</span>
-<span class="pay-pill">Apple Pay</span><span class="pay-pill">Google Pay</span><span class="pay-pill">Samsung Pay</span>
-<span class="pay-pill">Capitec Pay</span><span class="pay-pill">Ozow EFT</span><span class="pay-pill">FNB</span><span class="pay-pill">Absa</span><span class="pay-pill">Standard Bank</span><span class="pay-pill">Nedbank</span><span class="pay-pill">TymeBank</span><span class="pay-pill">Discovery</span><span class="pay-pill">African Bank</span>
-<span class="pay-pill">EFT</span><span class="pay-pill">Scan to Pay</span><span class="pay-pill">Zapper</span><span class="pay-pill">SnapScan</span><span class="pay-pill">PayShap</span><span class="pay-pill">3D Secure</span>
-</div>
-<div class="footer-bottom">
-<p>© <span id="year"></span> JORDAN — Time, Refined. All rights reserved.</p>
-<p>Yoco Secured • POPIA Compliant • SSL Encrypted</p>
-</div>
-</footer>
+<footer><div class="footer-top"><div class="footer-brand"><div class="footer-logo">JORDAN</div><div class="tagline">Time is precious. Formal watches, boxed in Johannesburg.</div></div><div class="footer-col"><h4>Shop</h4><a href="#collection">All Collection</a><a>Gift Box Included</a><a>R70 Shipping JHB</a></div><div class="footer-col"><h4>Contact</h4><p>WhatsApp: 0690151081</p><p>hello@jordan.co.za</p><p>Johannesburg, South Africa</p></div></div><div class="footer-pay"><span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">Amex</span><span class="pay-pill">Apple Pay</span><span class="pay-pill">Google Pay</span><span class="pay-pill">Capitec Pay</span><span class="pay-pill">Ozow</span><span class="pay-pill">FNB</span><span class="pay-pill">Absa</span><span class="pay-pill">Standard Bank</span><span class="pay-pill">Nedbank</span><span class="pay-pill">TymeBank</span><span class="pay-pill">3D Secure</span></div><div class="footer-bottom"><p>© <span id="year"></span> JORDAN — Time, Refined.</p><p>Yoco Secured • POPIA Compliant • SSL Encrypted</p></div></footer>
 <div class="overlay" id="overlay" onclick="closeAllDrawers()"></div>
 <aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></div></aside>
 <aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Your Wishlist</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button></div></aside>
 <div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProduct()">×</button><div class="modal-grid"><div class="modal-image" id="modalImage"></div><div class="modal-content"><div class="time-mark" style="justify-content:flex-start">Time, Refined</div><h2 id="modalName">Watch</h2><p id="modalDescription"></p><div class="modal-price" id="modalPrice"></div><button class="btn primary" id="modalAdd">Add to Selection</button></div></div></div></div>
-<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout — Direct Yoco Pay</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email * invoice auto-sent here</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco - Apple Pay / Card - Get Invoice</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;line-height:1.6"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">✅ Secure by Yoco Payment Page • Invoice auto-sent • Money straight to your Yoco balance → Bank • 0690151081</p></div></div></div></div>
+<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout — Direct Yoco Pay</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email * invoice auto-sent here</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;line-height:1.6"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">✅ Secure by Yoco Checkout • Amount auto-filled • Invoice auto-sent • Money to Yoco → FNB ****535 • 0690151081</p></div></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
-// YOUR FULL CODE - WITH IMAGES - FIXED PAYMENT TO YOUR REAL YOCO PAGE
+// FULL CODE WITH IMAGES - SECURE - NO SECRET IN FRONTEND
 localStorage.removeItem("jordanCart");
-const YOCO_PAGE='https://pay.yoco.com/jordanco';
 const OWNER_WA='27690151081';
 const products = [
     { id: 1, name: "AJ-01 Turntable", subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", price: 300, stock: 12, image: "aj-01.jpg", tags:["mesh","black","steel"], description: "The signature. Spinning turntable dial." },
-    { id: 2, name: "AJ-02 Black Beast", subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", price: 250, stock: 15, image: "aj-02.jpg", tags:["steel","black"], description: "All-black presence. Honeycomb dial." },
+    { id: 2, name: "AJ-02 Black Beast", subtitle: "All Black Steel • Honeycomb Chrono Look • Steel Bracelet", price: 250, stock: 15, image: "aj-02.jpg", tags:["steel","black"], description: "All-black presence." },
     { id: 3, name: "AJ-03 Midnight Steel", subtitle: "Matte Black • Minimal Chrono • Black Steel", price: 250, stock: 14, image: "aj-03.jpg", tags:["steel","black"], description: "Clean business profile." },
     { id: 4, name: "AJ-04 Gold Boss", subtitle: "Black & Gold Two-Tone • Gold Case • Black Dial", price: 250, stock: 10, image: "aj-04.jpg", tags:["steel","black"], description: "Two-tone boss." },
     { id: 5, name: "AJ-05 Geneva Brown", subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", price: 250, stock: 12, image: "aj-05.jpg", tags:["leather"], description: "Classic Geneva brown leather." },
     { id: 6, name: "AJ-06 Geneva Silver Leather", subtitle: "Black Leather • Silver Dial • Two-Tone Markers", price: 250, stock: 11, image: "aj-06.jpg", tags:["leather","black"], description: "Quiet luxury." },
     { id: 7, name: "AJ-07 Geneva Roman Black", subtitle: "Black Steel • Black Dial • Full Roman Numerals", price: 250, stock: 13, image: "aj-07.jpg", tags:["steel","black"], description: "All black steel Roman." }
 ];
-let currentFilter="all";
-let cart=[];
-let wishlist=[];
+let currentFilter="all"; let cart=[]; let wishlist=[];
 try{ wishlist=JSON.parse(localStorage.getItem("jordanWishlist")||"[]"); }catch(e){ wishlist=[]; }
 if(!Array.isArray(wishlist)) wishlist=[];
-
 function money(v){return new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR",maximumFractionDigits:0}).format(v);}
-
-// YOUR IMAGE LOGIC - WITH PLACEHOLDER FALLBACK
-function productVisual(p){
-  return `<img src="./${p.image}?v=12" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`;
-}
-
+function productVisual(p){return `<img src="./${p.image}?v=14" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`;}
 function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));renderProducts();}
-function renderProducts(){
-  const c=document.getElementById("products");
-  const sort=document.getElementById("sort").value;
-  let list=[...products];
-  if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));
-  if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));
-  if(sort==="price") list.sort((a,b)=>a.price-b.price);
-  c.innerHTML=list.map(p=>`<article class="product"><div class="product-image has-real-image" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");
-}
+function renderProducts(){const c=document.getElementById("products");const sort=document.getElementById("sort").value;let list=[...products];if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));if(sort==="price") list.sort((a,b)=>a.price-b.price);c.innerHTML=list.map(p=>`<article class="product"><div class="product-image has-real-image" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");}
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
-function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
 function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
 function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
@@ -210,7 +145,7 @@ function updateWishlist(){document.getElementById("wishCount").textContent=wishl
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}" alt="${p.name}" onerror="this.style.display='none'">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
@@ -221,10 +156,9 @@ function toggleMobileMenu(){const l=document.querySelector(".navlinks");if(l.sty
 window.addEventListener("scroll",()=>{document.getElementById("header").classList.toggle("scrolled",window.scrollY>30);});
 document.getElementById("year").textContent=new Date().getFullYear();
 renderProducts();updateCart();updateWishlist();
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeAllDrawers();closeProduct();closeCheckout();}});
 
-// === NEW YOCO FLOW - YOUR REAL PAGE https://pay.yoco.com/jordanco ===
-function processOrder(e){
+// SECURE - NO SECRET HERE - CALLS /api/create-checkout
+async function processOrder(e){
   e.preventDefault();
   const firstName=document.getElementById('firstName').value.trim();
   const lastName=document.getElementById('lastName').value.trim();
@@ -233,21 +167,41 @@ function processOrder(e){
   const address=document.getElementById('address').value.trim();
   const city=document.getElementById('city').value.trim();
   const postal=document.getElementById('postal').value.trim();
-  if(!phone||!address){ showToast("Add phone & address"); return; }
   const sub=getCartTotal(); const ship=70; const total=sub+ship;
-  const btn=document.getElementById('payBtn');
-  const status=document.getElementById('payStatus');
-  btn.disabled=true;
-  btn.innerText=`Redirecting to Yoco Secure R${total}...`;
-  status.innerHTML=`Opening <b>${YOCO_PAGE}</b><br>Customer pays R${total} — Invoice auto to ${email} — Money to Money tab → bank`;
-
-  const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join(', ');
-  localStorage.setItem('jordanPendingOrder', JSON.stringify({firstName,lastName,email,phone,address,city,postal,sub,ship,total,items,cart}));
-
-  const preMsg=`*NEW CHECKOUT - JORDAN - Redirecting to Yoco*%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}, ${city} ${postal}%0AItems: ${items}%0ASub: ${money(sub)} Ship: R${ship} *TOTAL R${total}*%0ALink: ${YOCO_PAGE}%0ACustomer now on Yoco — invoice auto — money to Money tab`;
-
-  setTimeout(()=>{ window.open(`https://wa.me/${OWNER_WA}?text=${preMsg}`, '_blank'); },400);
-  setTimeout(()=>{ window.location.href = YOCO_PAGE; },900);
+  const btn=document.getElementById('payBtn'); const status=document.getElementById('payStatus');
+  btn.disabled=true; btn.innerText=`Creating secure payment R${total}...`; status.innerText=`Creating Yoco checkout for R${total} — invoice to ${email}`;
+  try{
+    const res=await fetch('/api/create-checkout',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        amount: total*100,
+        currency:'ZAR',
+        successUrl: window.location.origin + window.location.pathname + '?paid=1',
+        cancelUrl: window.location.href,
+        failureUrl: window.location.href,
+        metadata:{ customerName:firstName+' '+lastName, email:email, phone:phone, address:address+', '+city, items:cart.map(i=>products.find(p=>p.id===i.id).name+' x'+i.quantity).join(', ') }
+      })
+    });
+    const data=await res.json();
+    if(!res.ok) throw new Error(data.message || JSON.stringify(data));
+    localStorage.setItem('jordanPendingOrder', JSON.stringify({firstName,lastName,email,phone,address,city,postal,total,sub,ship,cart}));
+    window.location.href = data.redirectUrl;
+  }catch(err){
+    btn.disabled=false;
+    status.innerText='Yoco error: '+err.message;
+    showToast('Yoco error: '+err.message);
+  }
+}
+if(window.location.search.includes('paid=1')){
+  const pending=JSON.parse(localStorage.getItem('jordanPendingOrder')||'null');
+  if(pending){
+    localStorage.removeItem('jordanPendingOrder');
+    localStorage.removeItem('jordanCart');
+    cart=[];
+    const msg=`*PAID ORDER - JORDAN R${pending.total}*%0AName: ${pending.firstName} ${pending.lastName}%0AEmail: ${pending.email} (Yoco invoice auto-sent)%0APhone: ${pending.phone}%0AAddress: ${pending.address}, ${pending.city} ${pending.postal}%0ASub: R${pending.sub} Ship: R${pending.ship} *TOTAL PAID: R${pending.total}*%0AItems: ${pending.cart.map(i=>products.find(p=>p.id===i.id).name+' x'+i.quantity).join(', ')}`;
+    setTimeout(()=>{ window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`; },800);
+  }
 }
 </script>
 </body>
