@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>JORDAN | Time is The True Luxury</title>
-<link rel="preconnect" href="https://js.yoco.com">
-<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
 <style>
 :root{--bg:#090a0a;--card:#131414;--text:#f5f3ef;--muted:#9a9e9b;--line:rgba(255,255,255,.08);--accent:#c9a96a;--accent2:#e8d4a0;--max:1240px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
@@ -162,12 +160,12 @@ footer{border-top:1px solid var(--line);background:#060707;padding:0}
 <aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></div></aside>
 <aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Your Wishlist</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button></div></aside>
 <div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProduct()">×</button><div class="modal-grid"><div class="modal-image" id="modalImage"></div><div class="modal-content"><div class="time-mark" style="justify-content:flex-start">Time, Refined</div><h2 id="modalName">Watch</h2><p id="modalDescription"></p><div class="modal-price" id="modalPrice"></div><button class="btn primary" id="modalAdd">Add to Selection</button></div></div></div></div>
-<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout — Direct Yoco Pay</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email * invoice auto-sent here</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco - Apple Pay / Card - Get Invoice</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;line-height:1.6"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">✅ Secure by Yoco • Invoice auto-sent • Money straight to your Yoco balance → Bank • 0690151081</p></div></div></div></div>
+<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout — Direct Yoco Pay</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email * invoice auto-sent here</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco - Apple Pay / Card - Get Invoice</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;line-height:1.6"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">✅ Secure by Yoco Payment Page • Invoice auto-sent • Money straight to your Yoco balance → Bank • 0690151081</p></div></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
-// YOUR PROPER CODE - ONLY YOCO FIXED FOR RAIN
+// YOUR FULL CODE - WITH IMAGES - FIXED PAYMENT TO YOUR REAL YOCO PAGE
 localStorage.removeItem("jordanCart");
-const YOCO_PUBLIC_KEY='pk_live_a4d7fcf7V4kJbvV134c4';
+const YOCO_PAGE='https://pay.yoco.com/jordanco';
 const OWNER_WA='27690151081';
 const products = [
     { id: 1, name: "AJ-01 Turntable", subtitle: "Black Mesh • Spinning Turntable Dial • Silver Case", price: 300, stock: 12, image: "aj-01.jpg", tags:["mesh","black","steel"], description: "The signature. Spinning turntable dial." },
@@ -180,51 +178,53 @@ const products = [
 ];
 let currentFilter="all";
 let cart=[];
-let wishlist=JSON.parse(localStorage.getItem("jordanWishlist"))||[];
+let wishlist=[];
+try{ wishlist=JSON.parse(localStorage.getItem("jordanWishlist")||"[]"); }catch(e){ wishlist=[]; }
+if(!Array.isArray(wishlist)) wishlist=[];
+
 function money(v){return new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR",maximumFractionDigits:0}).format(v);}
-function productVisual(p){return `<img src="./${p.image}?v=8" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`;}
+
+// YOUR IMAGE LOGIC - WITH PLACEHOLDER FALLBACK
+function productVisual(p){
+  return `<img src="./${p.image}?v=12" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="placeholder-watch" style="display:none"></div>`;
+}
+
 function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));renderProducts();}
-function renderProducts(){const c=document.getElementById("products");const sort=document.getElementById("sort").value;let list=[...products];if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));if(sort==="price") list.sort((a,b)=>a.price-b.price);c.innerHTML=list.map(p=>`<article class="product"><div class="product-image has-real-image" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");}
+function renderProducts(){
+  const c=document.getElementById("products");
+  const sort=document.getElementById("sort").value;
+  let list=[...products];
+  if(currentFilter!=="all") list=list.filter(p=>p.tags.includes(currentFilter));
+  if(sort==="name") list.sort((a,b)=>a.name.localeCompare(b.name));
+  if(sort==="price") list.sort((a,b)=>a.price-b.price);
+  c.innerHTML=list.map(p=>`<article class="product"><div class="product-image has-real-image" onclick="openProduct(${p.id})"><div class="product-badge">Gift Box</div><button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>${productVisual(p)}</div><div class="product-info"><h3 class="product-name">${p.name}</h3><div class="product-sub">${p.subtitle}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add</button></div></div></article>`).join("");
+}
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
-function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
 function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
 function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
 function toggleWishlist(id){if(wishlist.includes(id)){wishlist=wishlist.filter(x=>x!==id);showToast("Removed");}else{wishlist.push(id);showToast("Added to wishlist");}localStorage.setItem("jordanWishlist",JSON.stringify(wishlist));updateWishlist();renderProducts();}
-function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
+function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}" alt="${p.name}" onerror="this.style.display='none'">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
-function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");const total=getCartTotal()+70; document.getElementById("checkoutTotal").textContent=money(total);}
+function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");const total=getCartTotal()+70; document.getElementById("checkoutTotal").textContent=money(total); document.getElementById("payBtn").innerHTML=`Pay ${money(total)} Securely on Yoco — Apple Pay / Card — Get Invoice`;}
 function subscribe(e){e.preventDefault();showToast("On the list.");e.target.reset();}
 function showToast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000);}
 function toggleMobileMenu(){const l=document.querySelector(".navlinks");if(l.style.display==="flex")l.style.display="";else{l.style.display="flex";l.style.position="absolute";l.style.top="76px";l.style.left="0";l.style.width="100%";l.style.padding="26px";l.style.background="#101111";l.style.flexDirection="column";l.style.borderTop="1px solid var(--line)";}}
 window.addEventListener("scroll",()=>{document.getElementById("header").classList.toggle("scrolled",window.scrollY>30);});
 document.getElementById("year").textContent=new Date().getFullYear();
 renderProducts();updateCart();updateWishlist();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeAllDrawers();closeProduct();closeCheckout();}});
 
-// FIXED YOCO - RETRY 3 TIMES FOR RAIN
-function loadYocoSDK(){
-  return new Promise((resolve, reject)=>{
-    if(window.YocoSDK){ try{ resolve(new window.YocoSDK({publicKey:YOCO_PUBLIC_KEY})); return;}catch(e){} }
-    let tries=3;
-    const tryLoad=()=>{
-      const s=document.createElement('script');
-      s.src='https://js.yoco.com/sdk/v1/yoco-sdk-web.js';
-      s.onload=()=>{ setTimeout(()=>{ if(window.YocoSDK){ resolve(new window.YocoSDK({publicKey:YOCO_PUBLIC_KEY})); } else if(tries-- >0){ tryLoad(); } else { reject('Yoco blocked by Rain - use WiFi'); } }, 400); };
-      s.onerror=()=>{ if(tries-- >0){ setTimeout(tryLoad,800); } else { reject('Failed to load Yoco - Rain blocking'); } };
-      document.head.appendChild(s);
-    };
-    tryLoad();
-  });
-}
-
-async function processOrder(e){
+// === NEW YOCO FLOW - YOUR REAL PAGE https://pay.yoco.com/jordanco ===
+function processOrder(e){
   e.preventDefault();
   const firstName=document.getElementById('firstName').value.trim();
   const lastName=document.getElementById('lastName').value.trim();
@@ -235,40 +235,19 @@ async function processOrder(e){
   const postal=document.getElementById('postal').value.trim();
   if(!phone||!address){ showToast("Add phone & address"); return; }
   const sub=getCartTotal(); const ship=70; const total=sub+ship;
-  const status=document.getElementById('payStatus');
   const btn=document.getElementById('payBtn');
+  const status=document.getElementById('payStatus');
   btn.disabled=true;
-  status.innerText="Opening Yoco Secure - Invoice will go to "+email+"...";
-  try{
-    const yoco = await loadYocoSDK();
-    status.innerText="Yoco ready - Apple Pay / Card - Pay R"+total+"...";
-    yoco.showPopup({
-      amountInCents: total*100,
-      currency: 'ZAR',
-      name: 'JORDAN',
-      description: cart.map(i=>products.find(x=>x.id===i.id).name).join(', '),
-      metadata: {email: email},
-      callback: function(result){
-        btn.disabled=false;
-        if(result.error){ status.innerText="❌ Payment failed: "+result.error.message; }
-        else {
-          status.innerHTML="✅ Paid "+money(total)+" - Invoice sent to "+email+"<br>PayID: "+result.id+" - Money in your Yoco → Bank";
-          const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join('%0A');
-          const msg=`*PAID ORDER - JORDAN - ${money(total)}*%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email} (invoice auto-sent by Yoco)%0APhone: ${phone}%0AAddress: ${address}, ${city} ${postal}%0A%0AItems:%0A${items}%0A%0ASub: ${money(sub)}%0AShip: R${ship}%0A*TOTAL PAID: ${money(total)}*%0APayID: ${result.id}%0A%0AMoney → Yoco balance → bank`;
-          cart=[]; saveCart();
-          setTimeout(()=>{ window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`; }, 1000);
-        }
-      }
-    });
-  }catch(err){
-    btn.disabled=false;
-    status.innerText="Rain blocking Yoco: "+err+" - Order will go to WhatsApp, connect to WiFi and pay via Yoco link";
-    setTimeout(()=>{
-      const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join('%0A');
-      const msg=`*NEW ORDER (Rain blocked Yoco) - JORDAN*%0A%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}, ${city}%0A%0AItems:%0A${items}%0ATOTAL: ${money(total)}%0A%0APlease send Yoco payment link`;
-      window.location.href=`https://wa.me/${OWNER_WA}?text=${msg}`;
-    },1500);
-  }
+  btn.innerText=`Redirecting to Yoco Secure R${total}...`;
+  status.innerHTML=`Opening <b>${YOCO_PAGE}</b><br>Customer pays R${total} — Invoice auto to ${email} — Money to Money tab → bank`;
+
+  const items=cart.map(i=>{const p=products.find(x=>x.id===i.id); return `${p.name} x${i.quantity}`;}).join(', ');
+  localStorage.setItem('jordanPendingOrder', JSON.stringify({firstName,lastName,email,phone,address,city,postal,sub,ship,total,items,cart}));
+
+  const preMsg=`*NEW CHECKOUT - JORDAN - Redirecting to Yoco*%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}, ${city} ${postal}%0AItems: ${items}%0ASub: ${money(sub)} Ship: R${ship} *TOTAL R${total}*%0ALink: ${YOCO_PAGE}%0ACustomer now on Yoco — invoice auto — money to Money tab`;
+
+  setTimeout(()=>{ window.open(`https://wa.me/${OWNER_WA}?text=${preMsg}`, '_blank'); },400);
+  setTimeout(()=>{ window.location.href = YOCO_PAGE; },900);
 }
 </script>
 </body>
