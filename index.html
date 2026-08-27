@@ -19,7 +19,7 @@ header.scrolled{background:rgba(9,10,10,.94);backdrop-filter:blur(22px);border-b
 .wishcount{background:#fff;color:#111}
 .hamburger{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:20px;display:none;place-items:center}
 
-/* HERO - PERFECT WATCH NO BUBBLES */
+/* HERO - CLEAN WATCH */
 .hero{height:100vh;height:100dvh;height:100svh;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:#090a0a}
 .watch-assembly{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center}
 .strap{width:230px;height:108px;position:relative;z-index:2;background:#101010;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06)}
@@ -66,16 +66,15 @@ header.scrolled{background:rgba(9,10,10,.94);backdrop-filter:blur(22px);border-b
 .product-info{padding:20px}.product-name{font-family:Georgia,serif;font-size:19px}.product-sub{color:var(--muted);font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin:4px 0 14px}
 .product-bottom{display:flex;justify-content:space-between;align-items:center}.price{color:var(--accent2);font-weight:700;font-size:14px}.add{border:1px solid var(--accent);background:transparent;color:var(--accent2);padding:8px 12px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
 
-/* PHILOSOPHY - PREMIUM WATCH FOCUS */
-.story{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#080808}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:700px}
-.story-visual{min-height:700px;background:#080808;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0}
-.owner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 28%;z-index:1;filter:brightness(1.15) contrast(1.12) saturate(1.05)}
-.owner-img-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.35) 40%, rgba(8,8,8,0.1) 100%), linear-gradient(to bottom, rgba(8,8,8,0.15) 0%, transparent 30%, rgba(8,8,8,0.75) 100%)}
-.watch-highlight{position:absolute;right:12%;bottom:18%;width:110px;height:110px;z-index:3;border:1px solid rgba(201,169,106,.35);border-radius:50%;box-shadow:0 0 0 8px rgba(201,169,106,.08), 0 0 40px rgba(201,169,106,.25);pointer-events:none}
-.quote-wrap{position:relative;z-index:4;padding:50px 46px;max-width:520px}
-.quote-wrap h3{font-family:Georgia,serif;font-size:clamp(32px,3.8vw,52px);font-weight:400;line-height:.98;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.9)}
-.quote-wrap .sub-badge{margin-top:14px;display:inline-block;padding:6px 12px;background:rgba(201,169,106,.12);border:1px solid rgba(201,169,106,.25);color:var(--accent2);font-size:9px;letter-spacing:2px;text-transform:uppercase}
+/* PHILOSOPHY - BOLD WATCH, NO TEXT ON FACE */
+.story{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#070707}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:720px}
+.story-visual{position:relative;background:#070707;min-height:720px;overflow:hidden;display:block}
+.owner-img{position:absolute;top:0;right:0;width:100%;height:100%;object-fit:cover;object-position:55% 18%;filter:brightness(1.18) contrast(1.15)}
+.quote-wrap{position:absolute;left:0;top:0;bottom:0;width:52%;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:60px 50px;background:linear-gradient(90deg, #070707 0%, #070707 72%, transparent 100%)}
+.quote-wrap h3{font-family:Georgia,serif;font-size:clamp(34px,3.8vw,56px);font-weight:400;line-height:.95;color:#fff}
+.quote-wrap .watch-label{margin-top:18px;display:flex;align-items:center;gap:10px;color:var(--accent2);font-size:10px;letter-spacing:3px;text-transform:uppercase}
+.quote-wrap .watch-label:before{content:"";width:32px;height:1px;background:var(--accent)}
 .story-content{padding:70px 50px;display:flex;flex-direction:column;justify-content:center;background:#0c0d0d}
 .story-content h2{font-family:Georgia,serif;font-size:42px;font-weight:400;line-height:1.05;margin-bottom:20px}
 .story-content p{color:var(--muted);max-width:460px;margin-bottom:16px;font-size:14px;line-height:1.7}
@@ -120,10 +119,20 @@ footer{border-top:1px solid var(--line);background:#060707}
 .mobile-nav.open{opacity:1;visibility:visible;transform:translateY(0)}
 .mobile-nav a{font-size:18px;letter-spacing:4px;text-transform:uppercase;color:#f5f3ef}
 .mobile-nav .close-mobile{position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:22px}
+
+/* MOBILE - NO TEXT ON FACE */
 @media(max-width:900px){
-  .navlinks{display:none}.hamburger{display:grid !important}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:620px;align-items:flex-end}.owner-img{object-position:50% 15%;filter:brightness(1.1) contrast(1.1)}.owner-img-overlay{background:linear-gradient(to bottom, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.1) 40%, rgba(8,8,8,0.85) 100%)}.quote-wrap{padding:28px 22px 34px;width:100%;max-width:100%;background:linear-gradient(to top, rgba(0,0,0,.85), transparent)}.quote-wrap h3{font-size:32px}.watch-highlight{right:22%;bottom:28%;width:84px;height:84px}.story-content{padding:36px 20px 50px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}.strap{width:190px;height:95px}.hero-inner{width:92vw;max-width:92vw}
+  .navlinks{display:none}.hamburger{display:grid !important}.products{grid-template-columns:repeat(2,1fr)}
+  .story-grid{grid-template-columns:1fr}
+  .story-visual{min-height:auto;display:flex;flex-direction:column;background:#070707}
+  .owner-img{position:relative;width:100%;height:580px;object-position:50% 12%}
+  .quote-wrap{position:relative;width:100%;background:#070707;padding:28px 22px 36px;left:auto;top:auto;bottom:auto}
+  .quote-wrap h3{font-size:32px}
+  .story-content{padding:36px 22px 50px}
+  .benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}
+  .strap{width:190px;height:95px}.hero-inner{width:92vw;max-width:92vw}
 }
-@media(max-width:600px){.nav{height:64px;padding:0 16px}.hero{padding:0 16px}.hero-inner{padding:28px 18px 24px}.section{padding:70px 16px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.strap{width:165px;height:78px}}
+@media(max-width:600px){.nav{height:64px;padding:0 16px}.hero{padding:0 16px}.hero-inner{padding:28px 18px 24px}.section{padding:70px 16px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.strap{width:165px;height:78px}.owner-img{height:520px}}
 </style>
 </head>
 <body>
@@ -151,19 +160,17 @@ footer{border-top:1px solid var(--line);background:#060707}
 <section class="story" id="story">
   <div class="story-grid">
     <div class="story-visual">
-      <img src="./owner.jpg?v=watchfocus" alt="JORDAN Owner Watch" class="owner-img">
-      <div class="owner-img-overlay"></div>
-      <div class="watch-highlight"></div>
+      <img src="./owner.jpg?v=bold" alt="JORDAN Owner Watch Focus" class="owner-img">
       <div class="quote-wrap">
         <h3>Time does<br>not rush. It<br>reveals.</h3>
-        <div class="sub-badge">AJ-01 TURNABLE • PREMIUM FOCUS</div>
+        <div class="watch-label">Premium Focus — Watch Bold, Face Clear</div>
       </div>
     </div>
     <div class="story-content">
       <div class="time-mark" style="justify-content:flex-start">Philosophy</div>
       <h2>Time is precious. With time, comes good things.</h2>
       <p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p>
-      <p>Premium build like AJ-01 — black dial, spinning detail, steel that catches light. I wear what I sell, watch in focus. You're not just buying time, you're wearing it well.</p>
+      <p>Black dial like AJ-01, steel that catches light — this is the watch focus you asked for. Bold, not loud. Worn, not stored.</p>
       <a href="#collection" class="btn" style="width:max-content;margin-top:12px">View The Edit</a>
     </div>
   </div>
@@ -211,7 +218,7 @@ function renderProducts(){
       <div class="product-image" onclick="openProduct(${p.id})">
         <div class="product-badge">${p.badge}</div>
         <button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>
-        <img src="./${p.image}?v=watchfocus" alt="${p.name}" loading="lazy">
+        <img src="./${p.image}?v=bold" alt="${p.name}" loading="lazy">
       </div>
       <div class="product-info">
         <h3 class="product-name">${p.name}</h3>
@@ -222,7 +229,7 @@ function renderProducts(){
 }
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
-function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=watchfocus" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=bold" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
 function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
 function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
@@ -232,11 +239,11 @@ function toggleWishlist(id){
   localStorage.setItem("jordanWishlist",JSON.stringify(wishlist));
   updateWishlist();renderProducts();
 }
-function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=watchfocus" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
+function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=bold" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=watchfocus" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=bold" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
