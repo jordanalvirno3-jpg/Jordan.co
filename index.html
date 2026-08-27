@@ -93,23 +93,36 @@ footer{border-top:1px solid var(--line);background:#060707}
 .pay-pill{font-size:7.5px;letter-spacing:.8px;text-transform:uppercase;color:#8a8e8b;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:5px 9px;border-radius:100px}
 .footer-bottom{max-width:var(--max);margin:auto;padding:14px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer-bottom p{font-size:8px;color:#4e5250}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
-.cart{position:fixed;right:0;top:0;height:100%;width:min(440px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
-.cart-head{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400;font-size:20px}.close{background:none;border:0;color:white;font-size:26px}
-.cart-items{flex:1;overflow:auto;padding:20px}.empty{text-align:center;color:var(--muted);padding:60px 20px;font-size:13px}
-.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cart-thumb{width:64px;height:64px;background:#181a1a;display:grid;place-items:center}
-.cart-name{font-family:Georgia,serif;font-size:14px}.cart-price{color:var(--accent2);font-size:12px;margin-top:2px}
-.qty{display:flex;align-items:center;gap:6px;margin-top:8px}.qty button{width:24px;height:24px;background:transparent;border:1px solid var(--line);color:white}.remove{background:none;border:0;color:#777;font-size:10px;margin-top:6px}
-.cart-total{padding:20px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;font-size:16px;margin-bottom:14px}.checkout{width:100%;padding:15px;border:0;background:var(--accent);font-weight:800;font-size:12px;letter-spacing:1px}
-.wishlist-panel{position:fixed;right:0;top:0;height:100%;width:min(440px,100%);background:#101111;z-index:2150;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.wishlist-panel.open{transform:translateX(0)}
+
+/* PREMIUM CART & CHECKOUT - NEW */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
+.cart{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#0f1010;z-index:2100;transform:translateX(100%);transition:.4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,.08);touch-action:pan-y}.cart.open{transform:translateX(0)}
+.cart-head{padding:24px 26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg, rgba(201,169,106,.08), transparent)}.cart-head h2{font-family:Georgia,serif;font-weight:400;font-size:22px;letter-spacing:-.5px}.cart-head h2 span{color:var(--accent);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-left:10px;vertical-align:middle}
+.close{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:white;font-size:20px;display:grid;place-items:center}
+.cart-items{flex:1;overflow:auto;padding:8px 18px 18px}.empty{text-align:center;color:var(--muted);padding:70px 20px;font-size:13px;line-height:1.6}
+.cart-item{display:grid;grid-template-columns:74px 1fr auto;gap:14px;padding:18px 12px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);border-radius:12px;margin-bottom:10px;border:1px solid rgba(255,255,255,.05)}
+.cart-thumb{width:74px;height:74px;background:#181a1a;border-radius:10px;overflow:hidden;display:grid;place-items:center;border:1px solid rgba(255,255,255,.06)}
+.cart-name{font-family:Georgia,serif;font-size:14.5px;line-height:1.2}.cart-price{color:var(--accent2);font-size:12px;margin-top:4px;font-weight:700;letter-spacing:.3px}
+.qty{display:flex;align-items:center;gap:8px;margin-top:10px}.qty button{width:28px;height:28px;background:#1a1c1c;border:1px solid rgba(255,255,255,.1);color:white;border-radius:8px;font-size:14px}.qty span{font-size:13px;min-width:18px;text-align:center}.remove{background:none;border:0;color:#8a8e8b;font-size:10px;margin-top:8px;letter-spacing:1px;text-transform:uppercase}
+.cart-total{padding:22px 26px;border-top:1px solid rgba(255,255,255,.08);background:linear-gradient(0deg, rgba(201,169,106,.08), transparent)}
+.total-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:10px}.total-row.total-grand{font-size:18px;color:#fff;font-weight:700;margin-top:12px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.12)}.total-row.total-grand strong{color:var(--accent2)}
+.checkout{width:100%;padding:16px;border:0;background:linear-gradient(135deg, #c9a96a, #e8d4a0);color:#111;font-weight:900;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-radius:12px;box-shadow:0 8px 24px rgba(201,169,106,.25);transition:.3s}.checkout:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(201,169,106,.35)}
+.secure-line{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;color:#6e7270;font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.wishlist-panel{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#0f1010;z-index:2150;transform:translateX(100%);transition:.4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,.08);touch-action:pan-y}.wishlist-panel.open{transform:translateX(0)}
 .modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.85);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}
 .modal-box{width:min(860px,100%);max-height:90vh;overflow:auto;background:#111212;border:1px solid var(--line);position:relative}.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:50%;background:#111;border:1px solid var(--line);color:white}
 .modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-image{min-height:480px;background:#0b0c0c;display:grid;place-items:center}.modal-image img{width:100%;height:100%;object-fit:cover}
 .modal-content{padding:44px 36px}.modal-content h2{font-family:Georgia,serif;font-size:36px;font-weight:400}.modal-content p{color:var(--muted);margin:16px 0;font-size:14px;line-height:1.6}.modal-price{font-size:22px;color:var(--accent2);margin-bottom:22px}
-.checkout-page{position:fixed;inset:0;z-index:4000;background:var(--bg);overflow:auto;display:none}.checkout-page.open{display:block}.checkout-inner{max-width:980px;margin:auto;padding:32px 28px 60px}.checkout-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
-.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}.checkout-box{border:1px solid var(--line);background:var(--card);padding:28px}.checkout-box h2{font-family:Georgia,serif;font-weight:400;margin-bottom:22px;font-size:20px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}
-.field input,.field select{background:#0b0c0c;border:1px solid var(--line);color:white;padding:12px;font-size:13px}.summary-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.summary-total{display:flex;justify-content:space-between;font-size:18px;padding-top:18px;color:var(--accent2)}
+
+/* CHECKOUT PAGE PREMIUM */
+.checkout-page{position:fixed;inset:0;z-index:4000;background:#090a0a;overflow:auto;display:none;touch-action:pan-y}.checkout-page.open{display:block}.checkout-inner{max-width:1080px;margin:auto;padding:28px 28px 60px}
+.checkout-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}.checkout-box{border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, #131414, #0f1010);padding:26px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.3)}.checkout-box h2{font-family:Georgia,serif;font-weight:400;margin-bottom:20px;font-size:20px;display:flex;align-items:center;gap:10px}.checkout-box h2:before{content:"";width:28px;height:1px;background:var(--accent)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:4px}.field.full{grid-column:1/-1}.field label{color:#8a8e8b;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.field input,.field select{background:#0b0c0c;border:1px solid rgba(255,255,255,.1);color:white;padding:13px 14px;font-size:13px;border-radius:10px;transition:.2s}.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,169,106,.15)}
+.summary-line{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12.5px;color:#c8cac7}.summary-line span:first-child{color:var(--muted)}
+.summary-total{display:flex;justify-content:space-between;font-size:19px;padding-top:18px;color:var(--accent2);font-weight:700}
+.pay-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.pay-badges span{font-size:7px;padding:5px 8px;border-radius:100px;border:1px solid rgba(255,255,255,.1);color:#8a8e8b;letter-spacing:.8px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#ecebe6;color:#111;padding:12px 20px;font-size:12px;z-index:5000;opacity:0;pointer-events:none;transition:.3s;border-radius:100px}.toast.show{opacity:1;transform:translate(-50%,0)}
 .mobile-nav{position:fixed;inset:0;z-index:1999;background:rgba(6,7,7,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;visibility:hidden;transition:.35s;transform:translateY(-10px)}
 .mobile-nav.open{opacity:1;visibility:visible;transform:translateY(0)}
@@ -126,7 +139,7 @@ footer{border-top:1px solid var(--line);background:#060707}
 .benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}
 .strap{width:190px;height:95px}.hero-inner{width:92vw;max-width:92vw}
 }
-@media(max-width:600px){.nav{height:64px;padding:0 16px}.hero{padding:0 16px}.hero-inner{padding:28px 18px 24px}.section{padding:70px 16px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.strap{width:165px;height:78px}.owner-img{height:560px}}
+@media(max-width:600px){.nav{height:64px;padding:0 16px}.hero{padding:0 16px}.hero-inner{padding:28px 18px 24px}.section{padding:70px 16px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.strap{width:165px;height:78px}.owner-img{height:560px}.cart,.wishlist-panel{width:100%}}
 </style>
 </head>
 <body>
@@ -187,10 +200,17 @@ footer{border-top:1px solid var(--line);background:#060707}
 <footer><div class="footer-top"><div class="footer-brand"><div class="footer-logo">JORDAN</div><div class="tagline">JORDAN is a Johannesburg-based brand curating formal watches for men — black steel, silver, gold, leather and mesh. Boxed locally. Designed to be kept.</div></div><div class="footer-col"><h4>Shop</h4><a href="#collection">Full Collection</a><a>Gift Box Included</a><a>R70 Shipping JHB</a><a>Formal Watches SA</a></div><div class="footer-col"><h4>Contact</h4><p>WhatsApp: 0690151081</p><p>hello@jordan.co.za</p><p>Johannesburg, South Africa</p><p>Mon-Sat 9am - 6pm</p></div></div><div class="footer-pay"><span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">Amex</span><span class="pay-pill">Apple Pay</span><span class="pay-pill">Google Pay</span><span class="pay-pill">Capitec Pay</span><span class="pay-pill">Ozow</span><span class="pay-pill">FNB</span><span class="pay-pill">Absa</span><span class="pay-pill">Standard Bank</span><span class="pay-pill">Nedbank</span><span class="pay-pill">TymeBank</span><span class="pay-pill">3D Secure</span></div><div class="footer-bottom"><p>© <span id="year"></span> JORDAN — Time, Refined. Formal Watches Johannesburg.</p><p>Yoco Secured • POPIA Compliant • SSL Encrypted</p></div></footer>
 
 <div class="overlay" id="overlay" onclick="closeAllDrawers()"></div>
-<aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></div></aside>
-<aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Your Wishlist</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button></div></aside>
+
+<!-- PREMIUM CART -->
+<aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection <span id="cartHeaderCount">0 items</span></h2><button class="close" onclick="handleSwipeHome()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Subtotal</span><strong id="cartSub">R0</strong></div><div class="total-row"><span>Shipping • Johannesburg</span><strong>R70</strong></div><div class="total-row total-grand"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout • Yoco</button><div class="secure-line">🔒 Yoco Secured • SSL • POPIA • FNB ****535</div></div></aside>
+
+<aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Wishlist <span id="wishHeaderCount">0 items</span></h2><button class="close" onclick="handleSwipeHome()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button><div class="secure-line">♡ Saved • Will stay when you return</div></div></aside>
+
 <div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" onclick="closeProduct()">×</button><div class="modal-grid"><div class="modal-image" id="modalImage"></div><div class="modal-content"><div class="time-mark" style="justify-content:flex-start">Time, Refined</div><h2 id="modalName">Watch</h2><p id="modalDescription"></p><div class="modal-price" id="modalPrice"></div><button class="btn primary" id="modalAdd">Add to Selection</button></div></div></div></div>
-<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Checkout — Direct Yoco Pay</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required></div><div class="field"><label>Last name</label><input id="lastName" required></div><div class="field full"><label>Email * invoice auto-sent here</label><input type="email" id="customerEmail" required></div><div class="field full"><label>Phone</label><input type="tel" id="phone" required></div><div class="field full"><label>Address</label><input id="address" required></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal</label><input id="postal" required></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn">Pay Securely with Yoco</button><div id="payStatus" style="text-align:center;margin-top:10px;font-size:10px;color:#8a8e8b;line-height:1.6"></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Shipping (JHB)</span><span>R70</span></div><div class="summary-total"><span>Total</span><strong id="checkoutTotal">R0</strong></div><p style="font-size:10px;color:#6e7270;margin-top:12px">✅ Secure by Yoco Checkout • Amount auto-filled • Invoice auto-sent • Money to Yoco → FNB ****535 • 0690151081</p></div></div></div></div>
+
+<!-- PREMIUM CHECKOUT PAGE -->
+<div class="checkout-page" id="checkoutPage"><div class="checkout-inner"><div class="checkout-top"><div class="logo">J<span>O</span>RDAN</div><button class="btn" onclick="closeCheckout()">← Back to Shop</button></div><div class="checkout-grid"><div class="checkout-box"><h2>Delivery Details</h2><form id="checkoutForm" onsubmit="processOrder(event)"><div class="form-grid"><div class="field"><label>First name</label><input id="firstName" required placeholder="John"></div><div class="field"><label>Last name</label><input id="lastName" required placeholder="Doe"></div><div class="field full"><label>Email * Invoice auto-sent here</label><input type="email" id="customerEmail" required placeholder="you@email.com"></div><div class="field full"><label>Phone • WhatsApp</label><input type="tel" id="phone" required placeholder="069 015 1081"></div><div class="field full"><label>Delivery Address</label><input id="address" required placeholder="Street, Suburb"></div><div class="field"><label>City</label><input id="city" required value="Johannesburg"></div><div class="field"><label>Postal Code</label><input id="postal" required placeholder="2000"></div><div class="field full"><label>Country</label><select id="country"><option>South Africa</option><option>Other</option></select></div></div><button type="submit" class="checkout" id="payBtn" style="margin-top:18px">Pay Securely with Yoco</button><div class="secure-line">🔒 Secured by Yoco • Amount auto-filled • Invoice auto-sent</div><div id="payStatus" style="text-align:center;margin-top:12px;font-size:10px;color:#8a8e8b;line-height:1.6"></div><div class="pay-badges"><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span><span>Capitec Pay</span><span>Ozow</span><span>FNB</span><span>3D Secure</span></div></form></div><div class="checkout-box"><h2>Your Order</h2><div id="checkoutSummary"></div><div class="summary-line"><span>Subtotal</span><strong id="checkoutSub">R0</strong></div><div class="summary-line"><span>Shipping • JHB Flat</span><span>R70</span></div><div class="summary-total"><span>Total to Pay</span><strong id="checkoutTotal">R0</strong></div><div class="pay-badges" style="margin-top:16px"><span>📦 Gift Boxed</span><span>🔧 Link Tool Included</span><span>🚚 R70 JHB</span><span>💬 WhatsApp Support</span></div><p style="font-size:10px;color:#6e7270;margin-top:18px;line-height:1.6">✅ Your amount is auto-filled for Yoco • No manual entry • Invoice sent to your email instantly • Money goes to Yoco → FNB ****535 • Support: 0690151081<br><br>POPIA Compliant • SSL Encrypted • Yoco Secured Checkout</p></div></div></div></div>
+
 <div class="toast" id="toast"></div>
 <script>
 localStorage.removeItem("jordanCart");
@@ -221,7 +241,7 @@ function renderProducts(){
       <div class="product-image" onclick="openProduct(${p.id})">
         <div class="product-badge">${p.badge}</div>
         <button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>
-        <img src="./${p.image}?v=growth" alt="${p.name} - ${p.subtitle}" loading="lazy">
+        <img src="./${p.image}?v=premiumcart" alt="${p.name} - ${p.subtitle}" loading="lazy">
       </div>
       <div class="product-info">
         <h3 class="product-name">${p.name}</h3>
@@ -232,7 +252,20 @@ function renderProducts(){
 }
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
-function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=growth" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function updateCart(){
+  const count=cart.reduce((a,b)=>a+b.quantity,0);
+  document.getElementById("cartCount").textContent=count;
+  document.getElementById("cartHeaderCount").textContent=count+" items";
+  const sub=getCartTotal();
+  document.getElementById("cartSub").textContent=money(sub);
+  const cont=document.getElementById("cartItems");
+  if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty.<br>Take your time — time is precious.</div>`;
+  else cont.innerHTML=cart.map(i=>{
+    const p=products.find(x=>x.id===i.id);
+    return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=premiumcart" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)} • ${p.subtitle.split('•')[0]}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div style="font-weight:700;color:var(--accent2)">${money(p.price*i.quantity)}</div></div>`
+  }).join("");
+  document.getElementById("cartTotal").textContent=money(sub+70);
+}
 function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
 function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
@@ -242,21 +275,69 @@ function toggleWishlist(id){
   localStorage.setItem("jordanWishlist",JSON.stringify(wishlist));
   updateWishlist();renderProducts();
 }
-function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=growth" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
+function updateWishlist(){
+  document.getElementById("wishCount").textContent=wishlist.length;
+  document.getElementById("wishHeaderCount").textContent=wishlist.length+" items";
+  const cont=document.getElementById("wishlistItems");
+  if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.<br>Tap ♡ on any watch to save it.</div>`;
+  else cont.innerHTML=wishlist.map(wId=>{
+    const p=products.find(x=>x.id===wId);if(!p) return "";
+    return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=premiumcart" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add to Cart</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div style="color:var(--accent2)">${money(p.price)}</div></div>`
+  }).join("");
+}
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=growth" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function handleSwipeHome(){closeAllDrawers();window.scrollTo({top:0,behavior:'smooth'});history.pushState(null,null,window.location.pathname);}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=premiumcart" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
-function renderCheckout(){document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");const total=getCartTotal()+70; document.getElementById("checkoutTotal").textContent=money(total); document.getElementById("payBtn").innerHTML=`Pay ${money(total)} Securely on Yoco`;}
+function renderCheckout(){
+  document.getElementById("checkoutSummary").innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="summary-line"><span>${p.name} × ${i.quantity}</span><strong>${money(p.price*i.quantity)}</strong></div>`}).join("");
+  const sub=getCartTotal(); const total=sub+70;
+  document.getElementById("checkoutSub").textContent=money(sub);
+  document.getElementById("checkoutTotal").textContent=money(total);
+  document.getElementById("payBtn").innerHTML=`Pay ${money(total)} Securely on Yoco →`;
+}
 function subscribe(e){e.preventDefault();showToast("On the list.");e.target.reset();}
 function showToast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000);}
 function toggleMobileMenu(){const m=document.getElementById("mobileNav");m.classList.toggle("open");}
 window.addEventListener("scroll",()=>{document.getElementById("header").classList.toggle("scrolled",window.scrollY>30);});
 document.getElementById("year").textContent=new Date().getFullYear();
 renderProducts();updateCart();updateWishlist();
+
+// SWIPE LEFT TO HOME - PREVENT BROWSER BACK
+let touchStartX=0, touchStartY=0;
+document.addEventListener('touchstart', e=>{
+  touchStartX=e.touches[0].clientX;
+  touchStartY=e.touches[0].clientY;
+},{passive:true});
+document.addEventListener('touchend', e=>{
+  if(!touchStartX) return;
+  const diffX=touchStartX - e.changedTouches[0].clientX;
+  const diffY=Math.abs(touchStartY - e.changedTouches[0].clientY);
+  const cartOpen=document.getElementById('cart').classList.contains('open');
+  const wishOpen=document.getElementById('wishlistPanel').classList.contains('open');
+  const checkoutOpen=document.getElementById('checkoutPage').classList.contains('open');
+  // Swipe left with more horizontal than vertical movement
+  if(diffX>80 && diffY<100){
+    if(cartOpen || wishOpen){
+      e.preventDefault();
+      handleSwipeHome();
+    }else if(checkoutOpen){
+      // on checkout page swipe left goes back to shop
+      e.preventDefault();
+      closeCheckout();
+    }
+  }
+  // Swipe right from left edge closes drawers (natural)
+  if(diffX<-80 && diffY<100 && (cartOpen||wishOpen)){
+    closeAllDrawers();
+  }
+  touchStartX=0;
+},{passive:false});
+
 async function processOrder(e){
   e.preventDefault();
   const firstName=document.getElementById('firstName').value.trim();
