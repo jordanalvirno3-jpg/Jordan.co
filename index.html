@@ -18,112 +18,128 @@ header.scrolled{background:rgba(9,10,10,.94);backdrop-filter:blur(22px);border-b
 .cartcount{position:absolute;top:-4px;right:-4px;background:var(--accent);color:#111;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center;font-weight:800}
 .wishcount{background:#fff;color:#111}
 .hamburger{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:20px;display:none;place-items:center}
-.hero{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:radial-gradient(ellipse at 50% 100%, rgba(201,169,106,0.18) 0%, transparent 60%), linear-gradient(180deg, #0e0f0f 0%, #090a0a 100%)}
-.hero-beam{position:absolute;left:50%;top:0;width:1px;height:100%;background:linear-gradient(to bottom, transparent, rgba(201,169,106,0.18) 20%, rgba(201,169,106,0.38) 50%, rgba(201,169,106,0.18) 80%, transparent 100%);box-shadow:0 0 40px rgba(201,169,106,0.35);pointer-events:none;z-index:1}
-.hero-glow{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle, rgba(201,169,106,0.22) 0%, rgba(201,169,106,0.08) 30%, transparent 65%);pointer-events:none;z-index:1}
-.hero-watch-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);width:min(760px, 92vw);height:min(760px, 92vw);z-index:2;pointer-events:none;display:grid;place-items:center}
-.hero-watch-wrap img{width:100%;height:100%;object-fit:contain;opacity:0.92;filter:brightness(1.05) contrast(1.15) drop-shadow(0 0 60px rgba(0,0,0,0.8)) drop-shadow(0 0 100px rgba(201,169,106,0.25));animation:floatWatch 6s ease-in-out infinite}
-@keyframes floatWatch{0%,100%{transform:translateY(0px) rotate(-2deg)}50%{transform:translateY(-12px) rotate(1deg)}}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 35%, rgba(9,10,10,0.6) 85%, rgba(9,10,10,0.95) 100%);z-index:2;pointer-events:none}
-.hero-inner{max-width:760px;width:100%;text-align:center;position:relative;z-index:4;padding-top:76px}
-.time-mark{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px;text-shadow:0 0 20px rgba(0,0,0,0.9)}
-.time-mark:before,.time-mark:after{content:"";width:36px;height:1px;background:var(--accent);opacity:.7}
-.hero h1{font-family:Georgia,serif;font-size:clamp(46px, 8.2vw, 88px);line-height:.88;font-weight:400;letter-spacing:-2.5px;text-shadow:0 2px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8)}
+
+/* HERO - FIXED - CLEAN */
+.hero{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 28px;background:radial-gradient(ellipse at 50% 0%, rgba(201,169,106,0.12) 0%, transparent 55%), linear-gradient(180deg, #0e0f0f 0%, #090a0a 100%)}
+.hero-watch-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-42%);width:min(520px, 78vw);height:min(520px, 78vw);z-index:1;pointer-events:none;display:grid;place-items:center;opacity:0.62}
+.hero-watch-wrap img{width:100%;height:100%;object-fit:contain;filter:brightness(1.05) contrast(1.1) drop-shadow(0 20px 60px rgba(0,0,0,0.9));animation:floatWatch 6s ease-in-out infinite}
+@keyframes floatWatch{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(9,10,10,0.15) 30%, rgba(9,10,10,0.65) 75%, rgba(9,10,10,0.95) 100%);z-index:2;pointer-events:none}
+.hero-inner{max-width:640px;width:100%;text-align:center;position:relative;z-index:3;padding-top:76px;background:rgba(9,10,10,0.42);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.06);padding:36px 28px 32px;border-radius:16px;box-shadow:0 20px 80px rgba(0,0,0,0.6)}
+.time-mark{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:22px}
+.time-mark:before,.time-mark:after{content:"";width:28px;height:1px;background:var(--accent);opacity:.7}
+.hero h1{font-family:Georgia,serif;font-size:clamp(38px, 6.5vw, 64px);line-height:.92;font-weight:400;letter-spacing:-1.5px}
 .hero h1 .line2{display:block;color:var(--accent2);font-style:italic}
-.hero-copy{max-width:500px;margin:28px auto 0;color:#e2e4e3;font-size:clamp(14px, 2vw, 16.5px);line-height:1.8;text-shadow:0 1px 12px rgba(0,0,0,1)}
-.hero-buttons{margin-top:42px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:16px 32px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.45);backdrop-filter:blur(10px);color:white;letter-spacing:1.2px;text-transform:uppercase;font-size:11px;transition:.3s}
-.btn.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700;box-shadow:0 0 24px rgba(201,169,106,0.35)}
-.hero-clock{margin-top:48px;display:flex;justify-content:center}.clock-line{width:280px;height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.22), transparent);position:relative}
-.clock-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 16px var(--accent), 0 0 32px var(--accent);animation:heartbeat 1.6s ease-in-out infinite}
-.clock-dot:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;border:1px solid var(--accent);border-radius:50%;opacity:0.5;animation:ping 1.6s ease-out infinite}
-@keyframes heartbeat{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}
-@keyframes ping{0%{transform:translate(-50%,-50%) scale(0.6);opacity:0.6}100%{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.6;z-index:4}
-.scroll-hint span{font-size:9px;letter-spacing:4px;text-transform:uppercase}.scroll-hint .line{width:1px;height:32px;background:linear-gradient(to bottom, rgba(255,255,255,.6), transparent)}
-.section{padding:110px 28px}.section-inner{max-width:var(--max);margin:auto}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px}
-.section-title{font-family:Georgia,serif;font-size:48px;font-weight:400;letter-spacing:-1.5px;line-height:1}
-.section-description{color:var(--muted);max-width:460px;font-size:15px;line-height:1.7}
-.toolbar{display:flex;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
-.filter-bar{display:flex;gap:10px;flex-wrap:wrap}
-.filter-btn{padding:12px 20px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#c8cac7;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;white-space:nowrap}
+.hero-copy{max-width:460px;margin:18px auto 0;color:#d7d9d8;font-size:14.5px;line-height:1.7}
+.hero-buttons{margin-top:28px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 28px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.45);backdrop-filter:blur(10px);color:white;letter-spacing:1.2px;text-transform:uppercase;font-size:11px;transition:.3s}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+.hero-clock{margin-top:28px;display:flex;justify-content:center}.clock-line{width:220px;height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.18), transparent);position:relative}
+.clock-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent)}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.5;z-index:4}
+.scroll-hint span{font-size:9px;letter-spacing:4px;text-transform:uppercase}.scroll-hint .line{width:1px;height:28px;background:linear-gradient(to bottom, rgba(255,255,255,.5), transparent)}
+
+.section{padding:90px 28px}.section-inner{max-width:var(--max);margin:auto}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+.section-title{font-family:Georgia,serif;font-size:44px;font-weight:400;letter-spacing:-1px;line-height:1}
+.section-description{color:var(--muted);max-width:440px;font-size:14px;line-height:1.6}
+.toolbar{display:flex;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap;align-items:center}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:10px 18px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#c8cac7;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;white-space:nowrap}
 .filter-btn.active,.filter-btn:hover{background:var(--accent);color:#111;border-color:var(--accent)}
-.sort{background:#131414;border:1px solid var(--line);color:white;padding:12px 18px;min-width:140px}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.product{background:var(--card);border:1px solid var(--line);transition:.4s}
-.product:hover{transform:translateY(-6px);border-color:rgba(201,169,106,.32)}
-.product-image{aspect-ratio:1/1.08;background:#0f1010;display:grid;place-items:center;position:relative;overflow:hidden}
-.product-image img{width:100%;height:100%;object-fit:cover;transition:.6s;position:absolute;inset:0}
-.product:hover img{transform:scale(1.06)}
-.product-badge{position:absolute;top:16px;left:16px;padding:8px 13px;font-size:8.5px;letter-spacing:1.8px;text-transform:uppercase;background:linear-gradient(135deg, #c9a96a, #e8d4a0);color:#111;font-weight:900;border:1px solid rgba(201,169,106,.9);z-index:3;box-shadow:0 0 18px rgba(201,169,106,.45), inset 0 1px 0 rgba(255,255,255,.5);border-radius:4px}
+.sort{background:#131414;border:1px solid var(--line);color:white;padding:10px 16px;min-width:130px;font-size:12px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:var(--card);border:1px solid var(--line);transition:.3s}
+.product:hover{transform:translateY(-4px);border-color:rgba(201,169,106,.28)}
+.product-image{aspect-ratio:1/1.05;background:#0f1010;display:grid;place-items:center;position:relative;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s;position:absolute;inset:0}
+.product:hover img{transform:scale(1.05)}
+.product-badge{position:absolute;top:14px;left:14px;padding:7px 11px;font-size:8px;letter-spacing:1.6px;text-transform:uppercase;background:linear-gradient(135deg, #c9a96a, #e8d4a0);color:#111;font-weight:900;border:1px solid rgba(201,169,106,.9);z-index:3;box-shadow:0 0 14px rgba(201,169,106,.35);border-radius:4px}
 .flash-badge{animation:badgeGlow 2.2s ease-in-out infinite}
-@keyframes badgeGlow{0%,100%{box-shadow:0 0 14px rgba(201,169,106,.4)}50%{box-shadow:0 0 26px rgba(201,169,106,.8)}}
-.fallback-watch{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:20px;background:radial-gradient(circle at center, rgba(201,169,106,.12), transparent 60%), #101010;color:#777;font-size:10px;letter-spacing:2px;line-height:1.6}
-.wishlist{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);color:white;z-index:3}.wishlist.active{color:#111;background:var(--accent2);border-color:var(--accent2)}
-.product-info{padding:24px}.product-name{font-family:Georgia,serif;font-size:22px}.product-sub{color:var(--muted);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin:5px 0 18px}
-.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{color:var(--accent2);font-weight:700}.add{border:1px solid var(--accent);background:transparent;color:var(--accent2);padding:10px 14px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+@keyframes badgeGlow{0%,100%{box-shadow:0 0 10px rgba(201,169,106,.3)}50%{box-shadow:0 0 18px rgba(201,169,106,.6)}}
+.fallback-watch{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:20px;background:#101010;color:#666;font-size:9px;letter-spacing:1.5px}
+.wishlist{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);color:white;z-index:3;font-size:14px}.wishlist.active{color:#111;background:var(--accent2);border-color:var(--accent2)}
+.product-info{padding:20px}.product-name{font-family:Georgia,serif;font-size:19px}.product-sub{color:var(--muted);font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin:4px 0 14px;line-height:1.4}
+.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{color:var(--accent2);font-weight:700;font-size:14px}.add{border:1px solid var(--accent);background:transparent;color:var(--accent2);padding:8px 12px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
 .story{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c0d0d}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
-.story-visual{min-height:640px;background:radial-gradient(circle at 50% 50%, rgba(201,169,106,.12), transparent 60%), linear-gradient(180deg,#121313,#090a0a);display:grid;place-items:center;text-align:center;padding:40px}
-.story-visual h3{font-family:Georgia,serif;font-size:52px;font-weight:400;line-height:1.05;max-width:400px}
-.story-content{padding:90px;display:flex;flex-direction:column;justify-content:center}
-.story-content h2{font-family:Georgia,serif;font-size:50px;font-weight:400;line-height:1.02;margin-bottom:24px}
-.story-content p{color:var(--muted);max-width:480px;margin-bottom:18px;font-size:15.5px;line-height:1.75}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.story-visual{min-height:560px;background:radial-gradient(circle at 50% 50%, rgba(201,169,106,.1), transparent 60%), linear-gradient(180deg,#121313,#090a0a);display:grid;place-items:center;text-align:center;padding:40px}
+.story-visual h3{font-family:Georgia,serif;font-size:42px;font-weight:400;line-height:1.05;max-width:360px}
+.story-content{padding:70px;display:flex;flex-direction:column;justify-content:center}
+.story-content h2{font-family:Georgia,serif;font-size:42px;font-weight:400;line-height:1.05;margin-bottom:20px}
+.story-content p{color:var(--muted);max-width:460px;margin-bottom:16px;font-size:14px;line-height:1.7}
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.benefit{padding:48px;border-right:1px solid var(--line)}.benefit:last-child{border-right:0}
-.benefit-number{color:var(--accent);font-size:11px;letter-spacing:3px;margin-bottom:18px}.benefit h3{font-family:Georgia,serif;font-size:24px;margin-bottom:10px}.benefit p{color:var(--muted);font-size:13px;line-height:1.6}
-.quote-strip{padding:100px 28px;text-align:center;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 0%, rgba(201,169,106,.08), transparent 60%)}
-.quote-strip blockquote{font-family:Georgia,serif;font-size:clamp(28px, 4vw, 44px);line-height:1.15;max-width:760px;margin:auto}
-.quote-strip cite{display:block;margin-top:20px;color:var(--accent);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-style:normal}
-.newsletter{text-align:center;padding:110px 28px}.newsletter h2{font-family:Georgia,serif;font-size:46px;font-weight:400}.newsletter p{color:var(--muted);margin:16px auto 32px;max-width:500px}
-.newsletter-form{display:flex;max-width:520px;margin:auto}.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--line);color:white;padding:16px}.newsletter-form button{border:0;padding:16px 28px;background:var(--accent);font-weight:700}
-footer{border-top:1px solid var(--line);background:#060707;padding:0}
-.footer-top{max-width:var(--max);margin:auto;padding:44px 28px 28px;display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px}
-.footer-brand .footer-logo{letter-spacing:8px;font-weight:800;font-size:13px;}
-.footer-brand .tagline{color:var(--muted);font-size:10px;letter-spacing:1px;margin-top:10px;line-height:1.7;max-width:320px}
-.footer-col h4{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:600}
-.footer-col a, .footer-col p{font-size:10px;color:#7a7e7c;line-height:2.1;display:block;letter-spacing:.3px}
-.footer-pay{max-width:var(--max);margin:auto;padding:18px 28px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
-.pay-pill{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:#8a8e8b;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:6px 10px;border-radius:100px}
-.footer-bottom{max-width:var(--max);margin:auto;padding:16px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.footer-bottom p{font-size:9px;color:#4e5250;letter-spacing:.4px}
+.benefit{padding:40px;border-right:1px solid var(--line)}.benefit:last-child{border-right:0}
+.benefit-number{color:var(--accent);font-size:10px;letter-spacing:3px;margin-bottom:14px}.benefit h3{font-family:Georgia,serif;font-size:20px;margin-bottom:8px}.benefit p{color:var(--muted);font-size:12px;line-height:1.6}
+.quote-strip{padding:80px 28px;text-align:center;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 0%, rgba(201,169,106,.06), transparent 60%)}
+.quote-strip blockquote{font-family:Georgia,serif;font-size:clamp(24px, 3.5vw, 36px);line-height:1.15;max-width:680px;margin:auto}
+.quote-strip cite{display:block;margin-top:16px;color:var(--accent);font-size:10px;letter-spacing:4px;text-transform:uppercase;font-style:normal}
+.newsletter{text-align:center;padding:90px 28px}.newsletter h2{font-family:Georgia,serif;font-size:38px;font-weight:400}.newsletter p{color:var(--muted);margin:14px auto 28px;max-width:480px;font-size:14px}
+.newsletter-form{display:flex;max-width:480px;margin:auto}.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--line);color:white;padding:14px;font-size:13px}.newsletter-form button{border:0;padding:14px 24px;background:var(--accent);font-weight:700;font-size:12px}
+footer{border-top:1px solid var(--line);background:#060707}
+.footer-top{max-width:var(--max);margin:auto;padding:36px 28px 24px;display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:32px}
+.footer-brand .footer-logo{letter-spacing:8px;font-weight:800;font-size:12px}
+.footer-brand .tagline{color:var(--muted);font-size:10px;letter-spacing:.5px;margin-top:8px;line-height:1.6;max-width:300px}
+.footer-col h4{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:600}
+.footer-col a, .footer-col p{font-size:9px;color:#7a7e7c;line-height:2;display:block}
+.footer-pay{max-width:var(--max);margin:auto;padding:14px 28px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
+.pay-pill{font-size:7.5px;letter-spacing:.8px;text-transform:uppercase;color:#8a8e8b;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:5px 9px;border-radius:100px}
+.footer-bottom{max-width:var(--max);margin:auto;padding:14px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer-bottom p{font-size:8px;color:#4e5250}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;opacity:0;visibility:hidden;transition:.3s}.overlay.open{opacity:1;visibility:visible}
-.cart{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
-.cart-head{padding:26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400}.close{background:none;border:0;color:white;font-size:26px}
-.cart-items{flex:1;overflow:auto;padding:22px}.empty{text-align:center;color:var(--muted);padding:80px 20px}
-.cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}.cart-thumb{width:72px;height:72px;background:#181a1a;display:grid;place-items:center}
-.cart-name{font-family:Georgia,serif}.cart-price{color:var(--accent2);font-size:13px;margin-top:4px}
-.qty{display:flex;align-items:center;gap:8px;margin-top:10px}.qty button{width:26px;height:26px;background:transparent;border:1px solid var(--line);color:white}.remove{background:none;border:0;color:#777;font-size:11px;margin-top:8px}
-.cart-total{padding:22px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;font-size:18px;margin-bottom:16px}.checkout{width:100%;padding:17px;border:0;background:var(--accent);font-weight:800}
-.wishlist-panel{position:fixed;right:0;top:0;height:100%;width:min(460px,100%);background:#101111;z-index:2150;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.wishlist-panel.open{transform:translateX(0)}
-.modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.85);display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}
-.modal-box{width:min(920px,100%);max-height:90vh;overflow:auto;background:#111212;border:1px solid var(--line);position:relative}.modal-close{position:absolute;top:16px;right:16px;z-index:5;width:40px;height:40px;border-radius:50%;background:#111;border:1px solid var(--line);color:white}
-.modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-image{min-height:520px;background:#0b0c0c;display:grid;place-items:center}.modal-image img{width:100%;height:100%;object-fit:cover}
-.modal-content{padding:56px 42px}.modal-content h2{font-family:Georgia,serif;font-size:42px;font-weight:400}.modal-content p{color:var(--muted);margin:20px 0}.modal-price{font-size:26px;color:var(--accent2);margin-bottom:28px}
-.checkout-page{position:fixed;inset:0;z-index:4000;background:var(--bg);overflow:auto;display:none}.checkout-page.open{display:block}.checkout-inner{max-width:1020px;margin:auto;padding:38px 28px 80px}.checkout-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:52px}
-.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}.checkout-box{border:1px solid var(--line);background:var(--card);padding:32px}.checkout-box h2{font-family:Georgia,serif;font-weight:400;margin-bottom:26px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}.field.full{grid-column:1/-1}.field label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.2px}
-.field input,.field select{background:#0b0c0c;border:1px solid var(--line);color:white;padding:14px}.summary-line{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}.summary-total{display:flex;justify-content:space-between;font-size:20px;padding-top:22px;color:var(--accent2)}
-.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#ecebe6;color:#111;padding:14px 22px;font-size:13px;z-index:5000;opacity:0;pointer-events:none;transition:.3s;border-radius:100px}.toast.show{opacity:1;transform:translate(-50%,0)}
-.mobile-nav{position:fixed;inset:0;z-index:1999;background:rgba(6,7,7,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:.35s;transform:translateY(-10px)}
+.cart{position:fixed;right:0;top:0;height:100%;width:min(440px,100%);background:#101111;z-index:2100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.cart.open{transform:translateX(0)}
+.cart-head{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cart-head h2{font-family:Georgia,serif;font-weight:400;font-size:20px}.close{background:none;border:0;color:white;font-size:26px}
+.cart-items{flex:1;overflow:auto;padding:20px}.empty{text-align:center;color:var(--muted);padding:60px 20px;font-size:13px}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cart-thumb{width:64px;height:64px;background:#181a1a;display:grid;place-items:center}
+.cart-name{font-family:Georgia,serif;font-size:14px}.cart-price{color:var(--accent2);font-size:12px;margin-top:2px}
+.qty{display:flex;align-items:center;gap:6px;margin-top:8px}.qty button{width:24px;height:24px;background:transparent;border:1px solid var(--line);color:white}.remove{background:none;border:0;color:#777;font-size:10px;margin-top:6px}
+.cart-total{padding:20px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;font-size:16px;margin-bottom:14px}.checkout{width:100%;padding:15px;border:0;background:var(--accent);font-weight:800;font-size:12px;letter-spacing:1px}
+.wishlist-panel{position:fixed;right:0;top:0;height:100%;width:min(440px,100%);background:#101111;z-index:2150;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}.wishlist-panel.open{transform:translateX(0)}
+.modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.85);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}
+.modal-box{width:min(860px,100%);max-height:90vh;overflow:auto;background:#111212;border:1px solid var(--line);position:relative}.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:50%;background:#111;border:1px solid var(--line);color:white}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-image{min-height:480px;background:#0b0c0c;display:grid;place-items:center}.modal-image img{width:100%;height:100%;object-fit:cover}
+.modal-content{padding:44px 36px}.modal-content h2{font-family:Georgia,serif;font-size:36px;font-weight:400}.modal-content p{color:var(--muted);margin:16px 0;font-size:14px}.modal-price{font-size:22px;color:var(--accent2);margin-bottom:22px}
+.checkout-page{position:fixed;inset:0;z-index:4000;background:var(--bg);overflow:auto;display:none}.checkout-page.open{display:block}.checkout-inner{max-width:980px;margin:auto;padding:32px 28px 60px}.checkout-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}.checkout-box{border:1px solid var(--line);background:var(--card);padding:28px}.checkout-box h2{font-family:Georgia,serif;font-weight:400;margin-bottom:22px;font-size:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.field input,.field select{background:#0b0c0c;border:1px solid var(--line);color:white;padding:12px;font-size:13px}.summary-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.summary-total{display:flex;justify-content:space-between;font-size:18px;padding-top:18px;color:var(--accent2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#ecebe6;color:#111;padding:12px 20px;font-size:12px;z-index:5000;opacity:0;pointer-events:none;transition:.3s;border-radius:100px}.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-nav{position:fixed;inset:0;z-index:1999;background:rgba(6,7,7,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;visibility:hidden;transition:.35s;transform:translateY(-10px)}
 .mobile-nav.open{opacity:1;visibility:visible;transform:translateY(0)}
-.mobile-nav a{font-size:20px;letter-spacing:5px;text-transform:uppercase;color:#f5f3ef}
-.mobile-nav .close-mobile{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:24px}
-@media(max-width:900px){.navlinks{display:none}.hamburger{display:grid !important}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:380px}.story-content{padding:60px 22px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.nav{height:68px;padding:0 18px}.hero{padding:0 18px}.hero-inner{padding-top:68px}.hero-watch-wrap{width:96vw;height:96vw;top:48%}.hero h1{font-size:clamp(36px, 11vw, 54px)}.section{padding:80px 18px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+.mobile-nav a{font-size:18px;letter-spacing:4px;text-transform:uppercase;color:#f5f3ef}
+.mobile-nav .close-mobile{position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:22px}
+@media(max-width:900px){.navlinks{display:none}.hamburger{display:grid !important}.products{grid-template-columns:repeat(2,1fr)}.story-grid{grid-template-columns:1fr}.story-visual{min-height:360px}.story-content{padding:50px 20px}.benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--line)}.checkout-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{height:64px;padding:0 16px}.hero{padding:0 16px}.hero-inner{padding:28px 18px 24px;margin:0 8px}.hero-watch-wrap{width:82vw;height:82vw}.section{padding:70px 16px}.products{grid-template-columns:1fr}.toolbar{flex-direction:column;align-items:stretch}.modal-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header id="header"><nav class="nav"><a href="#" class="logo">J<span>O</span>RDAN</a><div class="navlinks"><a href="#collection">Collection</a><a href="#story">Philosophy</a><a href="#contact">Contact</a></div><div class="navactions"><button class="iconbtn" onclick="openWishlist()">♡<span class="cartcount wishcount" id="wishCount">0</span></button><button class="iconbtn" onclick="openCart()">🛒<span class="cartcount" id="cartCount">0</span></button><button class="hamburger" onclick="toggleMobileMenu()">☰</button></div></nav></header>
 <div class="mobile-nav" id="mobileNav"><button class="close-mobile" onclick="toggleMobileMenu()">×</button><a href="#collection" onclick="toggleMobileMenu()">Collection</a><a href="#story" onclick="toggleMobileMenu()">Philosophy</a><a href="#contact" onclick="toggleMobileMenu()">Contact</a></div>
-<section class="hero"><div class="hero-beam"></div><div class="hero-glow"></div><div class="hero-watch-wrap"><img src="./aj-01.jpg" alt="JORDAN Watch" onerror="this.style.display='none'"></div><div class="hero-vignette"></div><div class="hero-inner"><div class="time-mark">Time • Precious • Patient</div><h1><span>Time is</span><span class="line2">the true luxury.</span></h1><p class="hero-copy">With time, comes good things. <strong>JORDAN</strong> — formal watches that speak without shouting. Boxed in Johannesburg, designed to be kept.</p><div class="hero-buttons"><a href="#collection" class="btn primary">Explore Collection</a><a href="#story" class="btn">Why Time Matters</a></div><div class="hero-clock"><div class="clock-line"><div class="clock-dot"></div></div></div></div><div class="scroll-hint"><span>Scroll</span><div class="line"></div></div></section>
+
+<section class="hero">
+  <div class="hero-watch-wrap"><img src="./aj-01.jpg?v=clean1" alt="JORDAN Watch" onerror="this.style.display='none'"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-inner">
+    <div class="time-mark">Time • Precious • Patient</div>
+    <h1><span>Time is</span><span class="line2">the true luxury.</span></h1>
+    <p class="hero-copy">With time, comes good things. <strong>JORDAN</strong> — formal watches that speak without shouting. Boxed in Johannesburg, designed to be kept.</p>
+    <div class="hero-buttons"><a href="#collection" class="btn primary">Explore Collection</a><a href="#story" class="btn">Why Time Matters</a></div>
+    <div class="hero-clock"><div class="clock-line"><div class="clock-dot"></div></div></div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="line"></div></div>
+</section>
+
 <section class="section" id="collection"><div class="section-inner"><div class="section-head"><div><div class="time-mark" style="justify-content:flex-start">The Collection — 8 Pieces</div><h2 class="section-title">Designed to be kept.</h2></div><p class="section-description">A focused edit of 8 formal watches. Stainless steel, mesh and leather. Balanced dials, comfortable fit, gift boxed. Made for everyday ceremony.</p></div><div class="toolbar"><div class="filter-bar"><button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Pieces</button><button class="filter-btn" data-filter="mesh" onclick="setFilter('mesh')">Mesh</button><button class="filter-btn" data-filter="leather" onclick="setFilter('leather')">Leather</button><button class="filter-btn" data-filter="steel" onclick="setFilter('steel')">Steel</button><button class="filter-btn" data-filter="black" onclick="setFilter('black')">Black</button><button class="filter-btn" data-filter="gold" onclick="setFilter('gold')">Gold</button><button class="filter-btn" data-filter="silver" onclick="setFilter('silver')">Silver</button></div><select id="sort" class="sort" onchange="renderProducts()"><option value="default">Featured</option><option value="name">Name A-Z</option><option value="price">Price</option></select></div><div class="products" id="products"></div></div></section>
-<section class="story" id="story"><div class="story-grid"><div class="story-visual"><div><h3>Time does not rush. It reveals.</h3></div></div><div class="story-content"><div class="time-mark" style="justify-content:flex-start">Philosophy</div><h2>Time is precious. With time, comes good things.</h2><p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p><p>Each piece is chosen for proportion, finish and comfort. Not to shout, but to stay.</p><a href="#collection" class="btn" style="width:max-content;margin-top:14px">View The Edit</a></div></div></section>
+
+<section class="story" id="story"><div class="story-grid"><div class="story-visual"><div><h3>Time does not rush. It reveals.</h3></div></div><div class="story-content"><div class="time-mark" style="justify-content:flex-start">Philosophy</div><h2>Time is precious. With time, comes good things.</h2><p>We live in a world that moves fast. JORDAN is a small act of resistance — a reminder to move with intention.</p><p>Each piece is chosen for proportion, finish and comfort. Not to shout, but to stay.</p><a href="#collection" class="btn" style="width:max-content;margin-top:12px">View The Edit</a></div></div></section>
+
 <section class="section"><div class="section-inner"><div class="benefits"><div class="benefit"><div class="benefit-number">01 — PATIENCE</div><h3>Built to Last Beyond Trends</h3><p>Formal profiles that don't expire next season.</p></div><div class="benefit"><div class="benefit-number">02 — PRESENCE</div><h3>Elegant, Not Loud</h3><p>Clean dials, quiet branding. Confidence without noise.</p></div><div class="benefit"><div class="benefit-number">03 — PROMISE</div><h3>Boxed, Ready, Local</h3><p>Gift boxed, ready for gifting. Shipping is R70 in Johannesburg.</p></div></div></div></section>
+
 <section class="quote-strip"><blockquote>"Time is the most valuable thing we have. We should wear it well."</blockquote><cite>— JORDAN, Johannesburg</cite></section>
 <section class="newsletter" id="contact"><div class="time-mark" style="justify-content:center">Stay in time</div><h2>First to know, never rushed.</h2><p>New pieces arrive slowly. Join the list for early access.</p><form class="newsletter-form" onsubmit="subscribe(event)"><input type="email" id="email" placeholder="Your email" required><button type="submit">Join</button></form></section>
+
 <footer><div class="footer-top"><div class="footer-brand"><div class="footer-logo">JORDAN</div><div class="tagline">Time is precious. Formal watches, boxed in Johannesburg.</div></div><div class="footer-col"><h4>Shop</h4><a href="#collection">All Collection (8)</a><a>Gift Box Included</a><a>R70 Shipping JHB</a></div><div class="footer-col"><h4>Contact</h4><p>WhatsApp: 0690151081</p><p>hello@jordan.co.za</p><p>Johannesburg, South Africa</p></div></div><div class="footer-pay"><span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">Amex</span><span class="pay-pill">Apple Pay</span><span class="pay-pill">Google Pay</span><span class="pay-pill">Capitec Pay</span><span class="pay-pill">Ozow</span><span class="pay-pill">FNB</span><span class="pay-pill">Absa</span><span class="pay-pill">Standard Bank</span><span class="pay-pill">Nedbank</span><span class="pay-pill">TymeBank</span><span class="pay-pill">3D Secure</span></div><div class="footer-bottom"><p>© <span id="year"></span> JORDAN — Time, Refined.</p><p>Yoco Secured • POPIA Compliant • SSL Encrypted</p></div></footer>
+
 <div class="overlay" id="overlay" onclick="closeAllDrawers()"></div>
 <aside class="cart" id="cart"><div class="cart-head"><h2>Your Selection</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div class="total-row"><span>Total</span><strong id="cartTotal">R0</strong></div><button class="checkout" onclick="openCheckout()">Proceed to Checkout</button></div></aside>
 <aside class="wishlist-panel" id="wishlistPanel"><div class="cart-head"><h2>Your Wishlist</h2><button class="close" onclick="closeAllDrawers()">×</button></div><div class="cart-items" id="wishlistItems"></div><div class="cart-total"><button class="checkout" onclick="closeAllDrawers()">Continue Browsing</button></div></aside>
@@ -141,7 +157,7 @@ const products = [
     { id: 5, name: "AJ-05 Geneva Brown", subtitle: "Brown Leather • Champagne Dial • Gold Case • Roman", price: 250, stock: 12, image: "aj-05.jpg", badge:"OLD MONEY", tags:["leather","gold"], description: "Classic Geneva brown leather." },
     { id: 6, name: "AJ-06 Geneva Silver Leather", subtitle: "Black Leather • Silver Dial • Two-Tone Markers", price: 250, stock: 11, image: "aj-06.jpg", badge:"CLEAN BOY", tags:["leather","black"], description: "Quiet luxury." },
     { id: 7, name: "AJ-07 Geneva Roman Black", subtitle: "Black Steel • Black Dial • Full Roman Numerals", price: 250, stock: 13, image: "aj-07.jpg", badge:"ROMAN ELITE", tags:["steel","black"], description: "All black steel Roman." },
-    { id: 8, name: "AJ-08 Silver Phantom", subtitle: "Silver Steel • Black Skeleton Chrono • Geneva 12", price: 280, stock: 10, image: "aj-08.jpg", badge:"SILVER ICE • NEW", tags:["steel","silver","black"], description: "NEW - Silver skeleton chronograph. Silver steel bracelet, black 3-eye dial with visible movement, bold 12." }
+    { id: 8, name: "AJ-08 Silver Phantom", subtitle: "Silver Steel • Black Skeleton Chrono • Geneva 12", price: 280, stock: 10, image: "aj-08.jpg", badge:"SILVER ICE • NEW", tags:["steel","silver","black"], description: "NEW - Silver skeleton chronograph." }
 ];
 let currentFilter="all"; let cart=[]; let wishlist=[];
 try{ wishlist=JSON.parse(localStorage.getItem("jordanWishlist")||"[]"); }catch(e){ wishlist=[]; }
@@ -159,8 +175,8 @@ function renderProducts(){
       <div class="product-image" onclick="openProduct(${p.id})">
         <div class="product-badge flash-badge">${p.badge}</div>
         <button class="wishlist ${wishlist.includes(p.id)?"active":""}" onclick="event.stopPropagation();toggleWishlist(${p.id})">${wishlist.includes(p.id)?"♥":"♡"}</button>
-        <img src="./${p.image}?v=fix9" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="fallback-watch">⚠️ IMAGE MISSING<br><strong>${p.image}</strong><br>Upload to same folder as index.html</div>
+        <img src="./${p.image}?v=clean1" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="fallback-watch">MISSING ${p.image}</div>
       </div>
       <div class="product-info">
         <h3 class="product-name">${p.name}</h3>
@@ -171,16 +187,16 @@ function renderProducts(){
 }
 function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);if(e){if(e.quantity<p.stock)e.quantity++;else{showToast("Only "+p.stock+" left");return;}}else cart.push({id,quantity:1});saveCart();showToast(p.name+" added");}
 function saveCart(){localStorage.setItem("jordanCart",JSON.stringify(cart));updateCart();}
-function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=fix9" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.quantity,0);const cont=document.getElementById("cartItems");if(!cart.length)cont.innerHTML=`<div class="empty">Your selection is empty. Take your time.</div>`;else cont.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=clean1" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><div class="qty"><button onclick="changeQuantity(${p.id},-1)">−</button><span>${i.quantity}</span><button onclick="changeQuantity(${p.id},1)">+</button></div><button class="remove" onclick="removeFromCart(${p.id})">Remove</button></div><div>${money(p.price*i.quantity)}</div></div>`}).join("");document.getElementById("cartTotal").textContent=money(getCartTotal());}
 function getCartTotal(){return cart.reduce((t,i)=>{const p=products.find(x=>x.id===i.id);return t+p.price*i.quantity;},0);}
 function changeQuantity(id,d){const it=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!it)return;it.quantity+=d;if(it.quantity<=0)cart=cart.filter(x=>x.id!==id);if(it.quantity>p.stock){it.quantity=p.stock;showToast("Only "+p.stock+" left");}saveCart();}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);saveCart();}
 function toggleWishlist(id){if(wishlist.includes(id)){wishlist=wishlist.filter(x=>x!==id);showToast("Removed");}else{wishlist.push(id);showToast("Added to wishlist");}localStorage.setItem("jordanWishlist",JSON.stringify(wishlist));updateWishlist();renderProducts();}
-function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=fix9" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
+function updateWishlist(){document.getElementById("wishCount").textContent=wishlist.length;const cont=document.getElementById("wishlistItems");if(!wishlist.length)cont.innerHTML=`<div class="empty">Your wishlist is empty.</div>`;else cont.innerHTML=wishlist.map(wId=>{const p=products.find(x=>x.id===wId);if(!p) return "";return `<div class="cart-item"><div class="cart-thumb"><img src="./${p.image}?v=clean1" style="width:100%;height:100%;object-fit:cover"></div><div><div class="cart-name">${p.name}</div><div class="cart-price">${money(p.price)}</div><button class="add" style="margin-top:10px" onclick="addToCart(${p.id})">Add</button><button class="remove" onclick="toggleWishlist(${p.id})">Remove</button></div><div>${money(p.price)}</div></div>`}).join("");}
 function openWishlist(){document.getElementById("wishlistPanel").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");}
 function closeAllDrawers(){document.getElementById("cart").classList.remove("open");document.getElementById("wishlistPanel").classList.remove("open");document.getElementById("overlay").classList.remove("open");}
-function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=fix9" alt="${p.name}" onerror="this.parentElement.innerHTML='Missing ${p.image}'">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalImage").innerHTML=`<img src="./${p.image}?v=clean1" alt="${p.name}">`;document.getElementById("modalAdd").onclick=()=>{addToCart(p.id); closeProduct();};document.getElementById("productModal").classList.add("open");}
 function closeProduct(){document.getElementById("productModal").classList.remove("open");}
 function openCheckout(){if(!cart.length){showToast("Selection empty");return;}closeAllDrawers();renderCheckout();document.getElementById("checkoutPage").classList.add("open");document.body.style.overflow="hidden";}
 function closeCheckout(){document.getElementById("checkoutPage").classList.remove("open");document.body.style.overflow="";}
@@ -202,7 +218,7 @@ async function processOrder(e){
   const postal=document.getElementById('postal').value.trim();
   const sub=getCartTotal(); const ship=70; const total=sub+ship;
   const btn=document.getElementById('payBtn'); const status=document.getElementById('payStatus');
-  btn.disabled=true; btn.innerText=`Creating secure payment R${total}...`; status.innerText=`Creating Yoco checkout for R${total} — invoice to ${email}`;
+  btn.disabled=true; btn.innerText=`Creating secure payment R${total}...`; status.innerText=`Creating Yoco checkout for R${total}`;
   try{
     const res=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount: total*100,currency:'ZAR',successUrl: window.location.origin + window.location.pathname + '?paid=1',cancelUrl: window.location.href,failureUrl: window.location.href,metadata:{ customerName:firstName+' '+lastName, email:email, phone:phone, address:address+', '+city, items:cart.map(i=>products.find(p=>p.id===i.id).name+' x'+i.quantity).join(', ') }})});
     const data=await res.json(); if(!res.ok) throw new Error(data.message || JSON.stringify(data));
